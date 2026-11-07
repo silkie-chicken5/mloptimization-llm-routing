@@ -1,0 +1,30 @@
+# single source of truth
+
+# ---------- Reproducibility ----------
+seed = 42
+
+# ---------- Data subsetting ----------
+n_prompts = 2500                      # total # of prompts, subsetted from RouterBench
+split = [0.6, 0.2, 0.2]               # train / val / test, stratified by task
+
+# ---------- Carbon cost inputs ----------
+# carbon_cost = (Wh per query / 1000) kWh * grid_intensity (kg/kWh) / 1000 (kg -> t) * carbon_price ($/t)
+grid_intensity = nan                  # kg CO2 per kWh, ISO-NE, source: Electricity Maps
+carbon_price = nan                    # $ per metric ton CO2, source: RGGI auction results
+
+
+# ---------- Trade-off scenarios ----------
+# reward = quality - lambda * (dollar_cost + carbon_cost)
+[lambdas]
+quality_first = nan                   # small: quality dominates
+balanced = nan
+efficiency_first = nan                # large: cost and carbon matter more
+
+
+# ---------- Policy tree search ----------
+[tree]
+max_depth = [2, 3, 4]                 # tuned on validation data per scenario
+minbucket = [5, 10, 20]               # min leaf size, tuned on validation data
+
+
+# ---------- Model lookup table ----------
