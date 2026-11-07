@@ -9,8 +9,8 @@ split = [0.6, 0.2, 0.2]               # train / val / test, stratified by task
 
 # ---------- Carbon cost inputs ----------
 # carbon_cost = (Wh per query / 1000) kWh * grid_intensity (kg/kWh) / 1000 (kg -> t) * carbon_price ($/t)
-grid_intensity = nan                  # kg CO2 per kWh, ISO-NE, source: Electricity Maps
-carbon_price = nan                    # $ per metric ton CO2, source: RGGI auction results
+grid_intensity = 0.308                 # kg CO2 per kWh, ISO-NE, source: Electricity Maps
+carbon_price = 41.49                    # $ per metric ton CO2, source: RGGI auction results
 
 
 # ---------- Trade-off scenarios ----------
