@@ -1,0 +1,29 @@
+# raw data
+data/raw/
+
+# any generated files
+*.pkl
+*.pickle
+*.parquet.bak
+
+# licenses and secrets
+*.lic
+.env
+
+# python, virtual environment
+.venv/
+venv/
+
+# python, compiled bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# julia
+julia/Manifest.toml
+Manifest.toml
+
+# OS clutter
+.DS_Store
+.vscode/
+.idea/
