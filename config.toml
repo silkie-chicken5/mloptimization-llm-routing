@@ -9,9 +9,15 @@ split = [0.6, 0.2, 0.2]               # train / val / test, stratified by task
 
 # ---------- Carbon cost inputs ----------
 # carbon_cost = (Wh per query / 1000) kWh * grid_intensity (kg/kWh) / 1000 (kg -> t) * carbon_price ($/t)
-grid_intensity = 0.308                 # kg CO2 per kWh, ISO-NE, source: Electricity Maps
+grid_intensity = 0.308                 # kg CO2 per kWh, ISO-NE, source: Electricity Maps, 2025 
 carbon_price = 41.49                    # $ per metric ton CO2, source: RGGI auction results
 
+# ---------- Model Energy Inputs ----------
+[energy_wh_per_1k_queries]    # AI Energy Score, Text Generation
+"mistralai/mistral-7b-chat"   = 19.13   # source: Mistral-7B-v0.1
+"mistralai/mixtral-8x7b-chat" = 615.39   # source: Mixtral-8x7B
+"zero-one-ai/Yi-34B-Chat"     = 56.08   # source: Yi-1.5-34B
+"meta/llama-2-70b-chat"       = 1719.66   # source: Meta-Llama-3-70B
 
 # ---------- Trade-off scenarios ----------
 # reward = quality - lambda * (dollar_cost + carbon_cost)

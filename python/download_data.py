@@ -1,5 +1,6 @@
 """Download RouterBench (0-shot) into data/raw/. Run from the repo root."""
 import os
+import pandas as pd
 from huggingface_hub import hf_hub_download
 
 RAW_DIR = "data/raw"
@@ -22,5 +23,12 @@ def main():
     print(f"Saved to: {path}")
 
 
+    
+
+
+
 if __name__ == "__main__":
     main()
+    df = pd.read_pickle("/Users/juliahansen/Documents/MBAn Courses/ML/mloptimization-llm-routing/python/data/raw/routerbench_0shot.pkl")
+    print(df.shape)
+    print(df.columns.tolist())
