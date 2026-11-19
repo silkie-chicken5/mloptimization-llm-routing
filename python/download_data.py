@@ -29,6 +29,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    df = pd.read_pickle("/Users/juliahansen/Documents/MBAn Courses/ML/mloptimization-llm-routing/python/data/raw/routerbench_0shot.pkl")
-    print(df.shape)
-    print(df.columns.tolist())
