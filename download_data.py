@@ -1,6 +1,5 @@
 """Download RouterBench (0-shot) into data/raw/. Run from the repo root."""
 import os
-import pandas as pd
 from huggingface_hub import hf_hub_download
 
 RAW_DIR = "data/raw"

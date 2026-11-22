@@ -22,9 +22,9 @@ carbon_price = 41.49                    # $ per metric ton CO2, source: RGGI auc
 # ---------- Trade-off scenarios ----------
 # reward = quality - lambda * (dollar_cost + carbon_cost)
 [lambdas]
-quality_first = nan                   # small: quality dominates
-balanced = nan
-efficiency_first = nan                # large: cost and carbon matter more
+quality_first = 100                   # small: quality dominates
+balanced = 1000
+efficiency_first = 3000                # large: cost and carbon matter more
 
 
 # ---------- Policy tree search ----------

@@ -4,9 +4,10 @@ import tomllib
 from pathlib import Path
 import pandas as pd
 
-PYTHON_DIR = Path(__file__).resolve().parent
-CONFIG_PATH = PYTHON_DIR.parent / "config.toml"
-RAW_PATH = PYTHON_DIR / "data" / "raw" / "routerbench_0shot.pkl"
+ROOT_DIR = Path(__file__).resolve().parent
+CONFIG_PATH = ROOT_DIR / "config.toml"
+RAW_PATH = ROOT_DIR / "data" / "raw" / "routerbench_0shot.pkl"
+PROCESSED_DIR = ROOT_DIR / "data" / "processed"
 
 MODELS = [
     "mistralai/mistral-7b-chat",
@@ -15,8 +16,8 @@ MODELS = [
     "meta/llama-2-70b-chat",
 ]
 
-# Keep tasks that are central to the Routerbench paper and cover
-# knowledge, commonsense, math, and code
+# Cover a variety of tasks ranging from
+# knowledge across languages, commonsense, math, and coding problems
 TASKS = ["mmlu", "hellaswag", "arc", "gsm8k", "mbpp"]
 
 
@@ -31,6 +32,8 @@ def load_config_data(path=CONFIG_PATH):
         "grid_intensity": cfg["grid_intensity"],
         "carbon_price": cfg["carbon_price"],
         "energy": cfg["energy_wh_per_1k_queries"],
+        "split": cfg["split"],
+        "lambdas": cfg["lambdas"],
     }
 
 
@@ -102,6 +105,47 @@ def add_features(rb_sampled, energy, grid_intensity, carbon_price):
     return prompt_model_pair
 
 
+def make_prompts_table(rb_sampled, split_fractions, seed):
+    """One row per prompt: features the router can see, plus a train/val/test label."""
+    rb_sampled = rb_sampled.reset_index(drop=True)
+    assert rb_sampled["sample_id"].is_unique
+
+    # The prompt is stored as a string like "['text...']", so pull the text out
+    text = rb_sampled["prompt"].apply(ast.literal_eval).str[0]
+
+    prompts = rb_sampled[["sample_id", "task"]].copy()
+    prompts["prompt_len_words"] = text.str.split().str.len()
+    prompts["has_numbers"] = text.str.contains(r"\d").astype(int)
+    prompts["n_questions"] = text.str.count(r"\?")
+    prompts["has_code"] = text.str.contains(r"def |import |assert |```").astype(int)
+
+    # Split each task separately so every partition has the same task mix.
+    # Each prompt gets one label, so its four models always stay together.
+    train_frac, val_frac, _ = split_fractions
+    prompts["split"] = "test"
+    for task, rows in prompts.groupby("task"):
+        shuffled = rows.sample(frac=1, random_state=seed).index
+        n_train = round(len(rows) * train_frac)
+        n_val = round(len(rows) * val_frac)
+        prompts.loc[shuffled[:n_train], "split"] = "train"
+        prompts.loc[shuffled[n_train:n_train + n_val], "split"] = "val"
+
+    return prompts
+
+
+def make_rewards(pairs, prompts, lam):
+    """One row per prompt, one column per model: quality - lam * (dollars + carbon)."""
+    reward = pairs["quality"].astype(float) - lam * (pairs["cost"] + pairs["carbon_cost"])
+
+    table = pairs.assign(reward=reward).pivot(
+        index="sample_id", columns="model", values="reward"
+    )
+    table = table[MODELS]                                  # fixed column order
+    table.columns = [m.split("/")[-1] for m in MODELS]     # drop the slashes for Julia
+
+    # Same row order as prompts, so row i means the same prompt in both files
+    return table.loc[prompts["sample_id"]]
+
 def main():
     cfg = load_config_data()
     routerbench = pd.read_pickle(RAW_PATH)
@@ -110,7 +154,27 @@ def main():
         rb_sampled, cfg["energy"], cfg["grid_intensity"], cfg["carbon_price"]
     )
     print(prompt_model_pair.shape)
-    return prompt_model_pair
+    # needed for later evaluation
+    prompt_model_pair.to_csv(PROCESSED_DIR / "pairs.csv", index=False)
+
+    # feature matrix
+    prompts = make_prompts_table(rb_sampled, cfg["split"], cfg["seed"])
+    prompts.to_csv(PROCESSED_DIR / "prompts.csv", index=False)
+
+    # reward matrix, one per lambda
+    train_ids = prompts.loc[prompts["split"] == "train", "sample_id"]
+    for scenario, lam in cfg["lambdas"].items():
+        # computes reward: quality - lambda * (cost + carbon_cost)
+        rewards = make_rewards(prompt_model_pair, prompts, lam)
+        rewards.to_csv(PROCESSED_DIR / f"rewards_{scenario}.csv")
+
+        # single model baseline
+        print(f"\n{scenario} (lambda = {lam}): mean train reward per model")
+        print(rewards.loc[train_ids].mean().round(3))
+
+    # sanity check on dimensions of each task and split
+    print("\nSplit sizes:")
+    print(pd.crosstab(prompts["task"], prompts["split"]))
 
 
 if __name__ == "__main__":
