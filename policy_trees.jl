@@ -1,14 +1,16 @@
 #import Pkg; Pkg.add("CategoricalArrays")
 using CSV, DataFrames, TOML, Statistics, CategoricalArrays
 
+# data imports
 root = @__DIR__
 cfg = TOML.parsefile(joinpath(root, "config.toml"))
-scenario = "balanced"
+scenario = "quality_first"
 
 prompts = CSV.read(joinpath(root, "data", "processed", "prompts.csv"), DataFrame)
 rewards = CSV.read(joinpath(root, "data", "processed", "rewards_$scenario.csv"), DataFrame)
 @assert prompts.sample_id == rewards.sample_id
 
+# train/val/test mask
 train = prompts.split .== "train"
 val = prompts.split .== "val"
 
