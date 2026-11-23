@@ -134,8 +134,12 @@ def make_prompts_table(rb_sampled, split_fractions, seed):
 
 
 def make_rewards(pairs, prompts, lam):
-    """One row per prompt, one column per model: quality - lam * (dollars + carbon)."""
-    reward = pairs["quality"].astype(float) - lam * (pairs["cost"] + pairs["carbon_cost"])
+    """One row per prompt, one column per model: quality - lam_dollar * dollars - lam_carbon * carbon."""
+    reward = (
+        pairs["quality"].astype(float)
+        - lam["dollar"] * pairs["cost"]
+        - lam["carbon"] * pairs["carbon_cost"]
+    )
 
     table = pairs.assign(reward=reward).pivot(
         index="sample_id", columns="model", values="reward"
@@ -164,12 +168,12 @@ def main():
     # reward matrix, one per lambda
     train_ids = prompts.loc[prompts["split"] == "train", "sample_id"]
     for scenario, lam in cfg["lambdas"].items():
-        # computes reward: quality - lambda * (cost + carbon_cost)
+        # computes reward: quality - lambda_dollar * cost - lambda_carbon * carbon_cost
         rewards = make_rewards(prompt_model_pair, prompts, lam)
         rewards.to_csv(PROCESSED_DIR / f"rewards_{scenario}.csv")
 
         # single model baseline
-        print(f"\n{scenario} (lambda = {lam}): mean train reward per model")
+        print(f"\n{scenario} (lambda dollar = {lam['dollar']}, carbon = {lam['carbon']}): mean train reward per model")
         print(rewards.loc[train_ids].mean().round(3))
 
     # sanity check on dimensions of each task and split

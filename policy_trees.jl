@@ -55,10 +55,12 @@ end
 
 # ---------- Run every scenario ----------
 results = DataFrame()
-scenarios = sort(collect(keys(cfg["lambdas"])), by = s -> cfg["lambdas"][s])  # quality_first first
+# Order by total weight: quality_first, balanced, efficiency_first, carbon_first
+scenarios = sort(collect(keys(cfg["lambdas"])), by = s -> sum(values(cfg["lambdas"][s])))
 
 for scenario in scenarios
-    println("\n===== $scenario (lambda = $(cfg["lambdas"][scenario])) =====")
+    lam = cfg["lambdas"][scenario]
+    println("\n===== $scenario (lambda dollar = $(lam["dollar"]), carbon = $(lam["carbon"])) =====")
     rewards = CSV.read(joinpath(root, "data", "processed", "rewards_$scenario.csv"), DataFrame)
     @assert prompts.sample_id == rewards.sample_id
     R = select(rewards, Not(:sample_id))
@@ -82,7 +84,8 @@ for scenario in scenarios
 
     for (method, model, depth, minbucket, score) in methods
         push!(results, (
-            scenario = scenario, method = method, model = model,
+            scenario = scenario, lambda_dollar = lam["dollar"], lambda_carbon = lam["carbon"],
+            method = method, model = model,
             depth = depth, minbucket = minbucket,
             train = score(train), val = score(val), test = score(splits["test"]),
         ); promote = true)
