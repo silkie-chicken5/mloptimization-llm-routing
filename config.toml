@@ -29,8 +29,8 @@ efficiency_first = 3000                # large: cost and carbon matter more
 
 # ---------- Policy tree search ----------
 [tree]
-max_depth = [2, 3, 4]                 # tuned on validation data per scenario
-minbucket = [5, 10, 20]               # min leaf size, tuned on validation data
+max_depth = [2, 3, 4, 5]                 # tuned on validation data per scenario
+minbucket = [5, 8, 10, 15, 20, 25]               # min leaf size, tuned on validation data
 
 
 # ---------- Model lookup table ----------
