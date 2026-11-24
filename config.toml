@@ -38,6 +38,10 @@ carbon = 3000
 dollar = 0
 carbon = 30000
 
+[lambdas.carbon_realistic]             # carbon priced near EPA's social cost of carbon (~$190-240/t)
+dollar = 1000
+carbon = 5000
+
 
 # ---------- Policy tree search ----------
 [tree]

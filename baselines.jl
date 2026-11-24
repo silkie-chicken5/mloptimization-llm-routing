@@ -1,4 +1,5 @@
 """Make baselines to compare policy trees against + helper methods to score policy trees and baselines."""
+
 using DataFrames, Statistics
 
 # remove slashes to match the reward column names
@@ -25,4 +26,28 @@ function cheapest_model(pairs, train_ids)
     p = filter(row -> row.sample_id in ids, pairs)
     costs = combine(groupby(p, :model), [:cost, :carbon_cost] => ((c, cc) -> mean(c .+ cc)) => :total_cost)
     return short_name(costs.model[argmin(costs.total_cost)])
+end
+
+
+# ------- Outcome lookups (for quality / dollars / CO2 of each method's picks) -------
+# One pairs column as a prompts x models matrix, rows in the same order as prompts.csv
+function outcome_matrix(pairs, prompt_ids, column, model_names)
+    wide = unstack(pairs, :sample_id, :model_short, column)
+    wide = leftjoin(DataFrame(sample_id = prompt_ids), wide, on = :sample_id)
+    M = Matrix(wide[:, model_names])
+    @assert !any(ismissing, M) "missing outcomes for column $column"
+    return Float64.(M)
+end
+
+# Average of one outcome when each prompt goes to the model that was picked for it
+function picked_mean(outcomes, rows, picks, model_names)
+    col = Dict(name => j for (j, name) in enumerate(model_names))
+    return mean(outcomes[row, col[model]] for (row, model) in zip(rows, picks))
+end
+
+# Models a fitted tree recommends for some rows (predict may return a tuple; picks come first)
+function tree_picks(lnr, X)
+    p = IAI.predict(lnr, X)
+    p = p isa Tuple ? p[1] : p
+    return String.(p)
 end

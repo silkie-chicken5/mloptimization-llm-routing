@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html-W3wtTk7Q">
+<html lang="en" id="html-gBlJ0OUC">
   <head>
     <meta charset="utf-8">
 
@@ -193,7 +193,7 @@ select {
     <style>
       html,
       body,
-      #treevis-W3wtTk7Q {
+      #treevis-gBlJ0OUC {
           
       }
     </style>
@@ -204,17 +204,17 @@ select {
       
       <div class="mainarea">
         <div class="button-row">
-              <button id="collapse-W3wtTk7Q">Collapse</button>
-    <button id="expand-W3wtTk7Q">Expand</button>
-    <button id="savepng-W3wtTk7Q">Save PNG</button>
-    <button id="savehtml-W3wtTk7Q">Save HTML</button>
+              <button id="collapse-gBlJ0OUC">Collapse</button>
+    <button id="expand-gBlJ0OUC">Expand</button>
+    <button id="savepng-gBlJ0OUC">Save PNG</button>
+    <button id="savehtml-gBlJ0OUC">Save HTML</button>
     
 
         </div>
         <div class="button-row">
           
         </div>
-        <div id="treevis-W3wtTk7Q"></div>
+        <div id="treevis-gBlJ0OUC"></div>
       </div>
     </div>
 
@@ -837,36 +837,36 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
   "tasktype": "policy_maximize",
   "lnr": {
     "tree_": {
-      "node_count": 5,
+      "node_count": 15,
       "nodes": [
         {
           "id": 1,
           "parent": -2,
           "lower_child": 2,
-          "upper_child": 3,
+          "upper_child": 9,
           "depth": 0,
           "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
-              "feature": 1,
-              "threshold": 76.50000000000001
+              "feature": 0,
+              "threshold": 0.0
             },
             "ordinal_split": {
               "feature": 0,
               "split": []
             },
             "categoric_split": {
-              "feature": 2,
+              "feature": 1,
               "split": [
-                false,
-                false,
-                false,
-                false,
-                false,
+                true,
+                true,
+                true,
+                true,
+                true,
                 false
               ]
             },
-            "do_parallel": true,
+            "do_parallel": false,
             "do_ordinal": false
           },
           "split_hyperplane": {
@@ -916,10 +916,10 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
         {
           "id": 2,
           "parent": 1,
-          "lower_child": -2,
-          "upper_child": -2,
+          "lower_child": 3,
+          "upper_child": 6,
           "depth": 1,
-          "split_type": "LEAF",
+          "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
               "feature": 0,
@@ -930,14 +930,14 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               "split": []
             },
             "categoric_split": {
-              "feature": 0,
+              "feature": 1,
               "split": [
+                true,
+                true,
                 false,
+                true,
                 false,
-                false,
-                false,
-                false,
-                false
+                true
               ]
             },
             "do_parallel": false,
@@ -980,8 +980,8 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               0.01492253468980042
             ],
             "treatment_rank": [
-              2,
               3,
+              2,
               1,
               4
             ]
@@ -989,32 +989,32 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
         },
         {
           "id": 3,
-          "parent": 1,
+          "parent": 2,
           "lower_child": 4,
           "upper_child": 5,
-          "depth": 1,
+          "depth": 2,
           "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
-              "feature": 0,
-              "threshold": 0.0
+              "feature": 1,
+              "threshold": 75.5
             },
             "ordinal_split": {
               "feature": 0,
               "split": []
             },
             "categoric_split": {
-              "feature": 1,
+              "feature": 2,
               "split": [
                 false,
                 false,
-                true,
                 false,
-                true,
+                false,
+                false,
                 false
               ]
             },
-            "do_parallel": false,
+            "do_parallel": true,
             "do_ordinal": false
           },
           "split_hyperplane": {
@@ -1056,8 +1056,8 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "treatment_rank": [
               3,
               2,
-              1,
-              4
+              4,
+              1
             ]
           }
         },
@@ -1066,7 +1066,7 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
           "parent": 3,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 2,
+          "depth": 3,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -1128,10 +1128,10 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               0.028190945092180016
             ],
             "treatment_rank": [
-              1,
               2,
               3,
-              4
+              4,
+              1
             ]
           }
         },
@@ -1215,18 +1215,18 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
           "lower_child": 7,
           "upper_child": 8,
           "depth": 2,
-          "split_type": "LEAF",
+          "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
-              "feature": 0,
-              "threshold": 0.0
+              "feature": 1,
+              "threshold": 28.5
             },
             "ordinal_split": {
               "feature": 0,
               "split": []
             },
             "categoric_split": {
-              "feature": 0,
+              "feature": 2,
               "split": [
                 false,
                 false,
@@ -1236,7 +1236,7 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
                 false
               ]
             },
-            "do_parallel": false,
+            "do_parallel": true,
             "do_ordinal": false
           },
           "split_hyperplane": {
@@ -1950,7 +1950,7 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
           }
         }
       ],
-      "capacity": 5
+      "capacity": 15
     },
     "prb_": {
       "data": {
@@ -1976,10 +1976,10 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             []
           ],
           "X_numeric_means": [
-            105.3008495752124,
-            0.3843078460769615,
-            1.366816591704148,
-            0.0009995002498750624
+            105.28866666666667,
+            0.38266666666666665,
+            1.3686666666666667,
+            0.0
           ],
           "n_numeric_features": 9,
           "n_numeric_orig_features": 4,
@@ -1993,7 +1993,7 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             502.0,
             1.0,
             5.0,
-            1.0
+            0.0
           ],
           "numeric_features": [
             2,
@@ -2137,7 +2137,7 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "n_numeric_features": 4,
             "n_numeric_orig_features": 4,
             "X_mins": [
-              -0.4279266097345267,
+              -0.41042529369754965,
               -0.49193174067438783,
               -0.719940148940707,
               -1.163311437012729
@@ -2251,6 +2251,36 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
   },
   "data_content": {},
   "extra_content": [
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
     {
       "node_summary_include_default": true
     },
@@ -4402,13 +4432,13 @@ var updateTargetQuestion = function (i, info) {
   if (info.question === undefined) {
     loadtree(info);
     while (i <= 0) {
-      $('#target-question-W3wtTk7Q-' + i).hide();
+      $('#target-question-gBlJ0OUC-' + i).hide();
       i = i + 1;
     }
   } else {
-    $('#target-question-W3wtTk7Q-' + i).show();
-    $('#target-question-label-W3wtTk7Q-' + i).html(info.question);
-    var nextTargetQuestion = $('#target-question-select-W3wtTk7Q-' + i);
+    $('#target-question-gBlJ0OUC-' + i).show();
+    $('#target-question-label-gBlJ0OUC-' + i).html(info.question);
+    var nextTargetQuestion = $('#target-question-select-gBlJ0OUC-' + i);
     nextTargetQuestion.find('option').remove().end();
     info.responses.forEach(function (r) {
       nextTargetQuestion.append('<option>' + r.answer + '</option>');
@@ -4419,11 +4449,11 @@ var updateTargetQuestion = function (i, info) {
 }
 
 var changeHandler = function () {
-  var cur_i = parseInt(this.getAttribute('id').split('select-W3wtTk7Q-')[1]);
+  var cur_i = parseInt(this.getAttribute('id').split('select-gBlJ0OUC-')[1]);
 
   var info = treeinfo;
   for (var i = 1; i <= cur_i; i++) {
-    response = $('#target-question-select-W3wtTk7Q-' + i).val();
+    response = $('#target-question-select-gBlJ0OUC-' + i).val();
     info = info.responses.find(function (r) {
         return r.answer == response;
     });
@@ -4433,32 +4463,32 @@ var changeHandler = function () {
   updateTargetQuestion(cur_i + 1, info);
 }
 
-$('.target-question-W3wtTk7Q').change(changeHandler);
+$('.target-question-gBlJ0OUC').change(changeHandler);
 
 var loadtree = function (info) {
-  tree = new Tree(info, document.querySelector('#treevis-W3wtTk7Q'))
+  tree = new Tree(info, document.querySelector('#treevis-gBlJ0OUC'))
 };
 updateTargetQuestion(1, treeinfo);
 
 
         // Assign handlers to buttons
-            d3.selectAll("#collapse-W3wtTk7Q").on('click', function(d) {
+            d3.selectAll("#collapse-gBlJ0OUC").on('click', function(d) {
       collapseChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#expand-W3wtTk7Q").on('click', function(d) {
+    d3.selectAll("#expand-gBlJ0OUC").on('click', function(d) {
       expandChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#savepng-W3wtTk7Q").on('click', function(d) {
-      saveSvgAsPng(document.querySelector('#treevis-W3wtTk7Q svg'),
+    d3.selectAll("#savepng-gBlJ0OUC").on('click', function(d) {
+      saveSvgAsPng(document.querySelector('#treevis-gBlJ0OUC svg'),
                    "tree-" + new Date().toISOString() + ".png");
     });
-    d3.selectAll("#savehtml-W3wtTk7Q").on('click', function(d) {
-      var root = document.getElementById("html-W3wtTk7Q");
+    d3.selectAll("#savehtml-gBlJ0OUC").on('click', function(d) {
+      var root = document.getElementById("html-gBlJ0OUC");
       if (!root) {
         // In jupyter, the root html element doesn't exist
-        root = document.getElementById("treevis-W3wtTk7Q");
+        root = document.getElementById("treevis-gBlJ0OUC");
         root = root.parentNode.parentNode;
       }
 
