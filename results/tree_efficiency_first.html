@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html-p6xDip4j">
+<html lang="en" id="html-cJTkRPTQ">
   <head>
     <meta charset="utf-8">
 
@@ -193,7 +193,7 @@ select {
     <style>
       html,
       body,
-      #treevis-p6xDip4j {
+      #treevis-cJTkRPTQ {
           
       }
     </style>
@@ -204,17 +204,17 @@ select {
       
       <div class="mainarea">
         <div class="button-row">
-              <button id="collapse-p6xDip4j">Collapse</button>
-    <button id="expand-p6xDip4j">Expand</button>
-    <button id="savepng-p6xDip4j">Save PNG</button>
-    <button id="savehtml-p6xDip4j">Save HTML</button>
+              <button id="collapse-cJTkRPTQ">Collapse</button>
+    <button id="expand-cJTkRPTQ">Expand</button>
+    <button id="savepng-cJTkRPTQ">Save PNG</button>
+    <button id="savehtml-cJTkRPTQ">Save HTML</button>
     
 
         </div>
         <div class="button-row">
           
         </div>
-        <div id="treevis-p6xDip4j"></div>
+        <div id="treevis-cJTkRPTQ"></div>
       </div>
     </div>
 
@@ -837,19 +837,93 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
   "tasktype": "policy_maximize",
   "lnr": {
     "tree_": {
-      "node_count": 7,
+      "node_count": 25,
       "nodes": [
         {
           "id": 1,
           "parent": -2,
           "lower_child": 2,
-          "upper_child": 5,
+          "upper_child": 15,
           "depth": 0,
           "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
+              "feature": 2,
+              "threshold": 0.5
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 3,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 1840.3759448141705,
+          "baseline_error": 2329.233043584334,
+          "subtree_complexity": 12.0,
+          "n_node_samples": 3000,
+          "weighted_n_node_samples": 3000.0,
+          "orig_raw_error": 1840.3759448141705,
+          "orig_baseline_error": 2329.233043584334,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9679026210735047,
+              -2.9368976527325574,
+              -2.8731417548845273,
+              -2.5380821671620892
+            ],
+            "treatment_error_se": [
+              0.00799432088196508,
+              0.010786350733266161,
+              0.011823823846942708,
+              0.012257947602349332
+            ],
+            "treatment_rank": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "parent": 1,
+          "lower_child": 3,
+          "upper_child": 8,
+          "depth": 1,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
               "feature": 1,
-              "threshold": 138.00000000000003
+              "threshold": 92.5
             },
             "ordinal_split": {
               "feature": 0,
@@ -884,100 +958,26 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 952.6697382152427,
-          "baseline_error": 1162.314276932444,
-          "subtree_complexity": 3.0,
-          "n_node_samples": 1500,
-          "weighted_n_node_samples": 1500.0,
-          "orig_raw_error": 952.6697382152427,
-          "orig_baseline_error": 1162.314276932444,
+          "raw_error": 874.6273645979445,
+          "baseline_error": 1070.0106484025025,
+          "subtree_complexity": 6.0,
+          "n_node_samples": 1757,
+          "weighted_n_node_samples": 1757.0,
+          "orig_raw_error": 874.6273645979445,
+          "orig_baseline_error": 1070.0106484025025,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -2.715058126416559,
-              -2.6711394763127827,
-              -2.5921593112678556,
-              -2.247470337312849
+              -2.996459027694511,
+              -3.1353149740179056,
+              -3.1351138505136507,
+              -2.7695257709812284
             ],
             "treatment_error_se": [
-              0.011552530657000666,
-              0.015259161288697407,
-              0.016915605859588827,
-              0.01757306466673573
-            ],
-            "treatment_rank": [
-              1,
-              2,
-              3,
-              4
-            ]
-          }
-        },
-        {
-          "id": 2,
-          "parent": 1,
-          "lower_child": 3,
-          "upper_child": 4,
-          "depth": 1,
-          "split_type": "MIXED",
-          "split_mixed": {
-            "parallel_split": {
-              "feature": 0,
-              "threshold": 0.0
-            },
-            "ordinal_split": {
-              "feature": 0,
-              "split": []
-            },
-            "categoric_split": {
-              "feature": 1,
-              "split": [
-                false,
-                false,
-                false,
-                false,
-                true,
-                false
-              ]
-            },
-            "do_parallel": false,
-            "do_ordinal": false
-          },
-          "split_hyperplane": {
-            "standardized_weights": {
-              "n": 9,
-              "nzval": [],
-              "nzind": []
-            },
-            "threshold": 0.0,
-            "weights": {
-              "n": 9,
-              "nzval": [],
-              "nzind": []
-            },
-            "complexity": 0.0
-          },
-          "missingdatamode": "NONE",
-          "raw_error": 474.84261341052706,
-          "baseline_error": 538.5942293977654,
-          "subtree_complexity": 1.0,
-          "n_node_samples": 904,
-          "weighted_n_node_samples": 904.0,
-          "orig_raw_error": 474.84261341052706,
-          "orig_baseline_error": 538.5942293977654,
-          "dirty": false,
-          "fit": {
-            "treatment_error": [
-              -2.7547050150096855,
-              -2.894144234270744,
-              -2.8069309378858476,
-              -2.4026813011870525
-            ],
-            "treatment_error_se": [
-              0.015816682628229668,
-              0.019021916952776767,
-              0.02081320888891299,
-              0.02424770764421292
+              0.01124029571156291,
+              0.01354218458274288,
+              0.012863779170099073,
+              0.016028282247462337
             ],
             "treatment_rank": [
               2,
@@ -990,10 +990,10 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
         {
           "id": 3,
           "parent": 2,
-          "lower_child": -2,
-          "upper_child": -2,
+          "lower_child": 4,
+          "upper_child": 7,
           "depth": 2,
-          "split_type": "LEAF",
+          "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
               "feature": 0,
@@ -1004,14 +1004,14 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               "split": []
             },
             "categoric_split": {
-              "feature": 0,
+              "feature": 1,
               "split": [
+                true,
+                true,
+                true,
+                true,
                 false,
-                false,
-                false,
-                false,
-                false,
-                false
+                true
               ]
             },
             "do_parallel": false,
@@ -1032,41 +1032,115 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 197.12748360976258,
-          "baseline_error": 197.12748360976258,
-          "subtree_complexity": 0.0,
-          "n_node_samples": 256,
-          "weighted_n_node_samples": 256.0,
-          "orig_raw_error": 197.12748360976258,
-          "orig_baseline_error": 197.12748360976258,
-          "dirty": true,
+          "raw_error": 497.58196928137005,
+          "baseline_error": 575.6164092803057,
+          "subtree_complexity": 2.0,
+          "n_node_samples": 1185,
+          "weighted_n_node_samples": 1185.0,
+          "orig_raw_error": 497.58196928137005,
+          "orig_baseline_error": 575.6164092803057,
+          "dirty": false,
           "fit": {
             "treatment_error": [
-              -2.7199050781875442,
-              -2.470875328237391,
-              -2.219528386938333,
-              -1.7107593485418653
+              -3.0337131747637995,
+              -3.2585613914831812,
+              -3.187828037951224,
+              -2.8190869360414372
             ],
             "treatment_error_se": [
-              0.031576327985873356,
-              0.03853275689978191,
-              0.040371068310538424,
-              0.04606865636261379
+              0.013856027330212344,
+              0.015614939945417829,
+              0.01679190134035236,
+              0.021156849976615554
             ],
             "treatment_rank": [
-              1,
               2,
               3,
+              1,
               4
             ]
           }
         },
         {
           "id": 4,
-          "parent": 2,
+          "parent": 3,
+          "lower_child": 5,
+          "upper_child": 6,
+          "depth": 3,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 76.50000000000001
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 318.3022231885548,
+          "baseline_error": 333.77037633309266,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 948,
+          "weighted_n_node_samples": 948.0,
+          "orig_raw_error": 318.3022231885548,
+          "orig_baseline_error": 333.77037633309266,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -3.0451767157703946,
+              -3.3922351795540053,
+              -3.36390973902283,
+              -3.046303839632785
+            ],
+            "treatment_error_se": [
+              0.015206957672638693,
+              0.013675064054210123,
+              0.013135728176001662,
+              0.016465633996359714
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              4,
+              1
+            ]
+          }
+        },
+        {
+          "id": 5,
+          "parent": 4,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 2,
+          "depth": 4,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -1106,26 +1180,322 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 277.7151298007645,
-          "baseline_error": 277.7151298007645,
+          "raw_error": 244.45448328602464,
+          "baseline_error": 244.45448328602464,
           "subtree_complexity": 0.0,
-          "n_node_samples": 648,
-          "weighted_n_node_samples": 648.0,
-          "orig_raw_error": 277.7151298007645,
-          "orig_baseline_error": 277.7151298007645,
+          "n_node_samples": 754,
+          "weighted_n_node_samples": 754.0,
+          "orig_raw_error": 244.45448328602464,
+          "orig_baseline_error": 244.45448328602464,
           "dirty": true,
           "fit": {
             "treatment_error": [
-              -2.76845313819868,
-              -3.061361579864167,
-              -3.0389912049268397,
-              -2.6760331837135447
+              -3.0525454658403457,
+              -3.4201034455670825,
+              -3.363975234999279,
+              -3.0694830993334827
             ],
             "treatment_error_se": [
-              0.01817221989018109,
-              0.017891031266159887,
-              0.017182425419590967,
-              0.02014547401452143
+              0.017095964819038377,
+              0.014836064769027131,
+              0.015177841497001774,
+              0.018403408052859983
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              4,
+              1
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "parent": 4,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 73.84773990253018,
+          "baseline_error": 73.84773990253018,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 194,
+          "weighted_n_node_samples": 194.0,
+          "orig_raw_error": 73.84773990253018,
+          "orig_baseline_error": 73.84773990253018,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -3.016537346941823,
+              -3.2839224343280784,
+              -3.3636551824957936,
+              -2.9562153766722044
+            ],
+            "treatment_error_se": [
+              0.03319256451228672,
+              0.03262824137428588,
+              0.025305934004602206,
+              0.036128961867462644
+            ],
+            "treatment_rank": [
+              3,
+              2,
+              1,
+              4
+            ]
+          }
+        },
+        {
+          "id": 7,
+          "parent": 3,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 3,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 179.2797460928152,
+          "baseline_error": 179.2797460928152,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 237,
+          "weighted_n_node_samples": 237.0,
+          "orig_raw_error": 179.2797460928152,
+          "orig_baseline_error": 179.2797460928152,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9878590107374214,
+              -2.7238662391998805,
+              -2.4835012336647972,
+              -1.9102193216760506
+            ],
+            "treatment_error_se": [
+              0.032994282268837105,
+              0.039945401307064074,
+              0.04089016002704371,
+              0.049956791594918164
+            ],
+            "treatment_rank": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "id": 8,
+          "parent": 2,
+          "lower_child": 9,
+          "upper_child": 12,
+          "depth": 2,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 1,
+              "split": [
+                true,
+                true,
+                true,
+                false,
+                false,
+                true
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 377.0453953165744,
+          "baseline_error": 410.9285891838571,
+          "subtree_complexity": 3.0,
+          "n_node_samples": 572,
+          "weighted_n_node_samples": 572.0,
+          "orig_raw_error": 377.0453953165744,
+          "orig_baseline_error": 410.9285891838571,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9192804188183974,
+              -2.8799880427306466,
+              -3.0259070111543176,
+              -2.666850979728938
+            ],
+            "treatment_error_se": [
+              0.018779077888657694,
+              0.022690914509931968,
+              0.017894958350933896,
+              0.021807062816381208
+            ],
+            "treatment_rank": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "parent": 8,
+          "lower_child": 10,
+          "upper_child": 11,
+          "depth": 3,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 260.5
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 81.79217585228116,
+          "baseline_error": 87.47043646198435,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 162,
+          "weighted_n_node_samples": 162.0,
+          "orig_raw_error": 81.79217585228116,
+          "orig_baseline_error": 87.47043646198435,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -3.0022136356016174,
+              -3.2043726697868995,
+              -3.0703055873124936,
+              -2.545445795407091
+            ],
+            "treatment_error_se": [
+              0.03728864569612145,
+              0.038164306294905206,
+              0.03986586906476181,
+              0.04103950829135502
             ],
             "treatment_rank": [
               2,
@@ -1136,11 +1506,455 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
           }
         },
         {
-          "id": 5,
+          "id": 10,
+          "parent": 9,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 77.63477585228114,
+          "baseline_error": 77.63477585228114,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 156,
+          "weighted_n_node_samples": 156.0,
+          "orig_raw_error": 77.63477585228114,
+          "orig_baseline_error": 77.63477585228114,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -3.0003213279093095,
+              -3.2466548160357136,
+              -3.1095114646323005,
+              -2.575280292083254
+            ],
+            "treatment_error_se": [
+              0.03792621209299983,
+              0.03548194982733697,
+              0.03772431420896014,
+              0.040706546500673894
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              1,
+              4
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "parent": 9,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 4.1574000000000275,
+          "baseline_error": 4.1574000000000275,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 6,
+          "weighted_n_node_samples": 6.0,
+          "orig_raw_error": 4.1574000000000275,
+          "orig_baseline_error": 4.1574000000000275,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -3.051413635601616,
+              -2.1050368673177657,
+              -2.050952776997511,
+              -1.7697488818268432
+            ],
+            "treatment_error_se": [
+              0.20213190825135352,
+              0.03956987490503339,
+              0.12929833432515453,
+              0.0593548123575504
+            ],
+            "treatment_rank": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "id": 12,
+          "parent": 8,
+          "lower_child": 13,
+          "upper_child": 14,
+          "depth": 3,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 100.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 295.25321946429324,
+          "baseline_error": 301.7392853610187,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 410,
+          "weighted_n_node_samples": 410.0,
+          "orig_raw_error": 295.25321946429324,
+          "orig_baseline_error": 301.7392853610187,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.886511684382102,
+              -2.7518165559425714,
+              -3.0083641591113315,
+              -2.7148208330463537
+            ],
+            "treatment_error_se": [
+              0.0214491921501299,
+              0.02516489209346849,
+              0.019300559642482257,
+              0.025354037909671192
+            ],
+            "treatment_rank": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 13,
+          "parent": 12,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 12.018912133960935,
+          "baseline_error": 12.018912133960935,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 21,
+          "weighted_n_node_samples": 21.0,
+          "orig_raw_error": 12.018912133960935,
+          "orig_baseline_error": 12.018912133960935,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -3.0340469689349496,
+              -3.1719844863653854,
+              -2.8631242055689397,
+              -2.8724845961125576
+            ],
+            "treatment_error_se": [
+              0.10277294643299122,
+              0.10600629331830234,
+              0.10581922515128635,
+              0.10728965019003876
+            ],
+            "treatment_rank": [
+              2,
+              1,
+              4,
+              3
+            ]
+          }
+        },
+        {
+          "id": 14,
+          "parent": 12,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 283.2343073303323,
+          "baseline_error": 283.2343073303323,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 389,
+          "weighted_n_node_samples": 389.0,
+          "orig_raw_error": 283.2343073303323,
+          "orig_baseline_error": 283.2343073303323,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -2.8785470546247507,
+              -2.729133968439026,
+              -3.0162048763976825,
+              -2.7063094216726005
+            ],
+            "treatment_error_se": [
+              0.021842984128874452,
+              0.025395259742444526,
+              0.01944473227821907,
+              0.026017745998027458
+            ],
+            "treatment_rank": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 15,
           "parent": 1,
-          "lower_child": 6,
-          "upper_child": 7,
+          "lower_child": 16,
+          "upper_child": 21,
           "depth": 1,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 155.5
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 965.7485802162258,
+          "baseline_error": 1015.2524974915139,
+          "subtree_complexity": 5.0,
+          "n_node_samples": 1243,
+          "weighted_n_node_samples": 1243.0,
+          "orig_raw_error": 965.7485802162258,
+          "orig_baseline_error": 1015.2524974915139,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9275376923260716,
+              -2.6564316563541004,
+              -2.502840087933314,
+              -2.210933002310845
+            ],
+            "treatment_error_se": [
+              0.010844228613847491,
+              0.014256414958422932,
+              0.017186388723005822,
+              0.014660656610430244
+            ],
+            "treatment_rank": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "id": 16,
+          "parent": 15,
+          "lower_child": 17,
+          "upper_child": 18,
+          "depth": 2,
           "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
@@ -1157,7 +1971,7 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
                 false,
                 false,
                 false,
-                true,
+                false,
                 true,
                 false
               ]
@@ -1180,41 +1994,41 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 477.8271248047156,
-          "baseline_error": 497.66699332268485,
-          "subtree_complexity": 1.0,
-          "n_node_samples": 596,
-          "weighted_n_node_samples": 596.0,
-          "orig_raw_error": 477.8271248047156,
-          "orig_baseline_error": 497.66699332268485,
+          "raw_error": 217.73820435595292,
+          "baseline_error": 226.77826608421697,
+          "subtree_complexity": 2.0,
+          "n_node_samples": 332,
+          "weighted_n_node_samples": 332.0,
+          "orig_raw_error": 217.73820435595292,
+          "orig_baseline_error": 226.77826608421697,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -2.6549225772752854,
-              -2.332890648806085,
-              -2.2663983205586833,
-              -2.0120496806983006
+              -2.95562999751112,
+              -3.0612465690828947,
+              -3.0093135883088613,
+              -2.5777498396478604
             ],
             "treatment_error_se": [
-              0.016116996474024394,
-              0.017997019896115202,
-              0.02281225368575678,
-              0.021192498824615724
+              0.024361900965989263,
+              0.02986105698911182,
+              0.030914255080662215,
+              0.027258687890422306
             ],
             "treatment_rank": [
-              1,
               2,
               3,
+              1,
               4
             ]
           }
         },
         {
-          "id": 6,
-          "parent": 5,
+          "id": 17,
+          "parent": 16,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 2,
+          "depth": 3,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -1254,41 +2068,115 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 169.7675314820288,
-          "baseline_error": 169.7675314820288,
+          "raw_error": 17.96636784604451,
+          "baseline_error": 17.96636784604451,
           "subtree_complexity": 0.0,
-          "n_node_samples": 232,
-          "weighted_n_node_samples": 232.0,
-          "orig_raw_error": 169.7675314820288,
-          "orig_baseline_error": 169.7675314820288,
-          "dirty": true,
+          "n_node_samples": 19,
+          "weighted_n_node_samples": 19.0,
+          "orig_raw_error": 17.96636784604451,
+          "orig_baseline_error": 17.96636784604451,
+          "dirty": false,
           "fit": {
             "treatment_error": [
-              -2.67266103517612,
-              -2.5164804415271185,
-              -2.7581777098225406,
-              -2.3996062892903876
+              -2.7987153279150694,
+              -2.4176881956414595,
+              -2.3347662518414443,
+              -1.5304208816467522
             ],
             "treatment_error_se": [
-              0.03025875969927967,
-              0.032824618333952484,
-              0.023474601460330185,
-              0.032302517600544846
+              0.09973919300314377,
+              0.14884388523862951,
+              0.1873133342501518,
+              0.13051478241737882
             ],
             "treatment_rank": [
-              3,
               1,
               2,
+              3,
               4
             ]
           }
         },
         {
-          "id": 7,
-          "parent": 5,
+          "id": 18,
+          "parent": 16,
+          "lower_child": 19,
+          "upper_child": 20,
+          "depth": 3,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 37.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 199.7718365099084,
+          "baseline_error": 201.57238272497383,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 313,
+          "weighted_n_node_samples": 313.0,
+          "orig_raw_error": 199.7718365099084,
+          "orig_baseline_error": 201.57238272497383,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9651551691479408,
+              -3.100312412838126,
+              -3.0502605512254135,
+              -2.6413257188875443
+            ],
+            "treatment_error_se": [
+              0.025020436697826772,
+              0.028920391668140137,
+              0.029195036692155816,
+              0.023400221417887626
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              1,
+              4
+            ]
+          }
+        },
+        {
+          "id": 19,
+          "parent": 18,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 2,
+          "depth": 4,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -1328,37 +2216,481 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 308.0595933226868,
-          "baseline_error": 308.0595933226868,
+          "raw_error": 1.69493762635387,
+          "baseline_error": 1.69493762635387,
           "subtree_complexity": 0.0,
-          "n_node_samples": 364,
-          "weighted_n_node_samples": 364.0,
-          "orig_raw_error": 308.0595933226868,
-          "orig_baseline_error": 308.0595933226868,
+          "n_node_samples": 5,
+          "weighted_n_node_samples": 5.0,
+          "orig_raw_error": 1.69493762635387,
+          "orig_baseline_error": 1.69493762635387,
           "dirty": true,
           "fit": {
             "treatment_error": [
-              -2.643616746964862,
-              -2.2158773743245472,
-              -1.9529565120168852,
-              -1.7650355785187275
+              -3.1314736356016164,
+              -3.045216867317766,
+              -3.4053261103308445,
+              -2.9805588818268434
             ],
             "treatment_error_se": [
-              0.01798761874004461,
-              0.018276019933034904,
-              0.021861638792429475,
-              0.01869672254464089
+              0.22160099927572516,
+              0.21993777738260367,
+              0.17213031714372573,
+              0.2203761703996145
+            ],
+            "treatment_rank": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 20,
+          "parent": 18,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 198.07689888355455,
+          "baseline_error": 198.07689888355455,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 308,
+          "weighted_n_node_samples": 308.0,
+          "orig_raw_error": 198.07689888355455,
+          "orig_baseline_error": 198.07689888355455,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -2.9624551940431734,
+              -3.1012068210446255,
+              -3.0444964999412347,
+              -2.6358186870216467
+            ],
+            "treatment_error_se": [
+              0.02514139148034827,
+              0.02916941004601508,
+              0.0294225683287031,
+              0.023377985820954662
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              1,
+              4
+            ]
+          }
+        },
+        {
+          "id": 21,
+          "parent": 15,
+          "lower_child": 22,
+          "upper_child": 23,
+          "depth": 2,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 1,
+              "split": [
+                true,
+                true,
+                true,
+                false,
+                false,
+                true
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 748.010375860273,
+          "baseline_error": 753.4095296454697,
+          "subtree_complexity": 2.0,
+          "n_node_samples": 911,
+          "weighted_n_node_samples": 911.0,
+          "orig_raw_error": 748.010375860273,
+          "orig_baseline_error": 753.4095296454697,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9172998818744333,
+              -2.508903060277319,
+              -2.318263576270656,
+              -2.0772522229520156
+            ],
+            "treatment_error_se": [
+              0.011818350857713641,
+              0.013057727145707394,
+              0.01682105997996333,
+              0.015100079305647147
             ],
             "treatment_rank": [
               1,
               2,
               3,
+              4
+            ]
+          }
+        },
+        {
+          "id": 22,
+          "parent": 21,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 3,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 628.2999296454688,
+          "baseline_error": 628.2999296454688,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 754,
+          "weighted_n_node_samples": 754.0,
+          "orig_raw_error": 628.2999296454688,
+          "orig_baseline_error": 628.2999296454688,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.9110246042415855,
+              -2.4689479942807986,
+              -2.1820806348284134,
+              -1.9754328258122968
+            ],
+            "treatment_error_se": [
+              0.011933095413471454,
+              0.013059449054343121,
+              0.015188212871063967,
+              0.013641639756398873
+            ],
+            "treatment_rank": [
+              1,
+              2,
+              3,
+              4
+            ]
+          }
+        },
+        {
+          "id": 23,
+          "parent": 21,
+          "lower_child": 24,
+          "upper_child": 25,
+          "depth": 3,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 231.50000000000003
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 119.7104462148042,
+          "baseline_error": 121.20792146751195,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 157,
+          "weighted_n_node_samples": 157.0,
+          "orig_raw_error": 119.7104462148042,
+          "orig_baseline_error": 121.20792146751195,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -2.947437202480596,
+              -2.7007891734071183,
+              -2.9722886581015446,
+              -2.566244741699453
+            ],
+            "treatment_error_se": [
+              0.03756862443260888,
+              0.03903612625712174,
+              0.03023844332741938,
+              0.03930352233603741
+            ],
+            "treatment_rank": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 24,
+          "parent": 23,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 114.17084621480417,
+          "baseline_error": 114.17084621480417,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 147,
+          "weighted_n_node_samples": 147.0,
+          "orig_raw_error": 114.17084621480417,
+          "orig_baseline_error": 114.17084621480417,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -2.930912275057398,
+              -2.6925532758621755,
+              -2.9676412123716607,
+              -2.5675628274050735
+            ],
+            "treatment_error_se": [
+              0.03833632950385633,
+              0.04023773329143583,
+              0.03225394504361688,
+              0.04063549759864119
+            ],
+            "treatment_rank": [
+              3,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 25,
+          "parent": 23,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 4,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 5.539600000000035,
+          "baseline_error": 5.539600000000035,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 10,
+          "weighted_n_node_samples": 10.0,
+          "orig_raw_error": 5.539600000000035,
+          "orig_baseline_error": 5.539600000000035,
+          "dirty": true,
+          "fit": {
+            "treatment_error": [
+              -3.1903536356016167,
+              -2.821856867317766,
+              -3.0406061103308444,
+              -2.546868881826843
+            ],
+            "treatment_error_se": [
+              0.1549587681933476,
+              0.15548240594999732,
+              0.008993117368289597,
+              0.15463584775206596
+            ],
+            "treatment_rank": [
+              1,
+              3,
+              2,
               4
             ]
           }
         }
       ],
-      "capacity": 7
+      "capacity": 25
     },
     "prb_": {
       "data": {
@@ -1384,10 +2716,10 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             []
           ],
           "X_numeric_means": [
-            105.28866666666667,
-            0.38266666666666665,
-            1.3686666666666667,
-            0.0
+            114.003,
+            0.41433333333333333,
+            1.5006666666666666,
+            0.0016666666666666668
           ],
           "n_numeric_features": 9,
           "n_numeric_orig_features": 4,
@@ -1400,8 +2732,8 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
           "X_maxs": [
             502.0,
             1.0,
-            5.0,
-            0.0
+            7.0,
+            1.0
           ],
           "numeric_features": [
             2,
@@ -1537,24 +2869,24 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               []
             ],
             "X_numeric_means": [
-              0.1951099102618646,
-              0.15119126015809758,
-              0.07221109511316672,
-              -0.27247787884183244
+              0.19357178176988887,
+              0.1625668134289483,
+              0.09881091558090505,
+              -0.23624867214148607
             ],
             "n_numeric_features": 4,
             "n_numeric_orig_features": 4,
             "X_mins": [
-              -1.5818697566595064,
-              -1.4757952220231636,
-              -2.159820446822121,
-              -3.489934311038188
+              -1.6060075711482444,
+              -1.5780863181011953,
+              -2.1644168976254687,
+              -3.7443136356016162
             ],
             "X_maxs": [
-              0.9699860948835011,
-              0.9095473793546381,
-              0.8823639764264732,
-              0.8638783317563901
+              0.9699827962979963,
+              0.9094060280141458,
+              0.8823552710272244,
+              0.8634680425232232
             ],
             "numeric_features": [
               1,
@@ -1646,19 +2978,73 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               "llama-2-70b-chat"
             ]
           },
-          "reward_min": -3.489934311038188,
-          "reward_max": 0.9699860948835011
+          "reward_min": -3.7443136356016162,
+          "reward_max": 0.9699827962979963
         },
         "sample_weight": [],
         "sample_inds": []
       },
       "baseline": {
-        "baseline_error": 1162.314276932444
+        "baseline_error": 2329.233043584334
       }
     }
   },
   "data_content": {},
   "extra_content": [
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
     {
       "node_summary_include_default": true
     },
@@ -3816,13 +5202,13 @@ var updateTargetQuestion = function (i, info) {
   if (info.question === undefined) {
     loadtree(info);
     while (i <= 0) {
-      $('#target-question-p6xDip4j-' + i).hide();
+      $('#target-question-cJTkRPTQ-' + i).hide();
       i = i + 1;
     }
   } else {
-    $('#target-question-p6xDip4j-' + i).show();
-    $('#target-question-label-p6xDip4j-' + i).html(info.question);
-    var nextTargetQuestion = $('#target-question-select-p6xDip4j-' + i);
+    $('#target-question-cJTkRPTQ-' + i).show();
+    $('#target-question-label-cJTkRPTQ-' + i).html(info.question);
+    var nextTargetQuestion = $('#target-question-select-cJTkRPTQ-' + i);
     nextTargetQuestion.find('option').remove().end();
     info.responses.forEach(function (r) {
       nextTargetQuestion.append('<option>' + r.answer + '</option>');
@@ -3833,11 +5219,11 @@ var updateTargetQuestion = function (i, info) {
 }
 
 var changeHandler = function () {
-  var cur_i = parseInt(this.getAttribute('id').split('select-p6xDip4j-')[1]);
+  var cur_i = parseInt(this.getAttribute('id').split('select-cJTkRPTQ-')[1]);
 
   var info = treeinfo;
   for (var i = 1; i <= cur_i; i++) {
-    response = $('#target-question-select-p6xDip4j-' + i).val();
+    response = $('#target-question-select-cJTkRPTQ-' + i).val();
     info = info.responses.find(function (r) {
         return r.answer == response;
     });
@@ -3847,32 +5233,32 @@ var changeHandler = function () {
   updateTargetQuestion(cur_i + 1, info);
 }
 
-$('.target-question-p6xDip4j').change(changeHandler);
+$('.target-question-cJTkRPTQ').change(changeHandler);
 
 var loadtree = function (info) {
-  tree = new Tree(info, document.querySelector('#treevis-p6xDip4j'))
+  tree = new Tree(info, document.querySelector('#treevis-cJTkRPTQ'))
 };
 updateTargetQuestion(1, treeinfo);
 
 
         // Assign handlers to buttons
-            d3.selectAll("#collapse-p6xDip4j").on('click', function(d) {
+            d3.selectAll("#collapse-cJTkRPTQ").on('click', function(d) {
       collapseChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#expand-p6xDip4j").on('click', function(d) {
+    d3.selectAll("#expand-cJTkRPTQ").on('click', function(d) {
       expandChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#savepng-p6xDip4j").on('click', function(d) {
-      saveSvgAsPng(document.querySelector('#treevis-p6xDip4j svg'),
+    d3.selectAll("#savepng-cJTkRPTQ").on('click', function(d) {
+      saveSvgAsPng(document.querySelector('#treevis-cJTkRPTQ svg'),
                    "tree-" + new Date().toISOString() + ".png");
     });
-    d3.selectAll("#savehtml-p6xDip4j").on('click', function(d) {
-      var root = document.getElementById("html-p6xDip4j");
+    d3.selectAll("#savehtml-cJTkRPTQ").on('click', function(d) {
+      var root = document.getElementById("html-cJTkRPTQ");
       if (!root) {
         // In jupyter, the root html element doesn't exist
-        root = document.getElementById("treevis-p6xDip4j");
+        root = document.getElementById("treevis-cJTkRPTQ");
         root = root.parentNode.parentNode;
       }
 

@@ -53,7 +53,7 @@ def filter_data(routerbench, n_prompts, seed):
 
     # Select all mbpp tasks since there's the fewest (427)(and less than n_prompts/5)
     mbpp = routerbench[routerbench["task"] == "mbpp"]
-    n_per_task = (n_prompts - len(mbpp)) // (len(TASKS) - 1)  # (2500 - 427) // 4 = 518
+    n_per_task = (n_prompts - len(mbpp)) // (len(TASKS) - 1)  # e.g. (5000 - 427) // 4 = 1143
 
     # Randomly select n_per_task prompts from each remaining task
     return pd.concat([

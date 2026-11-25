@@ -35,36 +35,6 @@ cheapest = cheapest_model(pairs, prompts.sample_id[train])
 println("cheapest model (train): ", cheapest)
 
 
-# Grid search over max_depth and minbucket (values from config.toml): fit on train & keep tree w best val reward.
-function tune_tree(X, R; localsearch, depths = cfg["tree"]["max_depth"])
-    """
-    X: the data
-    R: the reward matrix
-    localsearch: true gives the optimal tree, false grows it greedy CART tree
-    depths: defaults to config file max depth grid
-    """
-    best = (score = -Inf, lnr = nothing, depth = 0, minbucket = 0) # best tree so far
-    for depth in depths, minbucket in cfg["tree"]["minbucket"]
-        lnr = IAI.OptimalTreePolicyMaximizer(
-            max_depth = depth,
-            minbucket = minbucket,
-            cp = 0, # control max_depth and minbucket, so alpha/cp is useless
-            localsearch = localsearch,
-            random_seed = cfg["seed"],
-        )
-        IAI.fit!(lnr, X[train, :], R[train, :])
-
-        val_score = avg_reward(lnr, X[val, :], R[val, :])
-        train_score = avg_reward(lnr, X[train, :], R[train, :])
-        println("  depth=$depth minbucket=$minbucket  train=$(round(train_score, digits=3))  val=$(round(val_score, digits=3))")
-
-        if val_score > best.score # keeps best tree
-            best = (score = val_score, lnr = lnr, depth = depth, minbucket = minbucket)
-        end
-    end
-    return best
-end
-
 # ---------- Run every scenario ----------
 results = DataFrame()
 # order by total weight: quality_first, balanced, efficiency_first, carbon_first
@@ -80,11 +50,11 @@ for scenario in scenarios
 
     # MODEL
     println("optimal tree:")
-    opt = tune_tree(X, R; localsearch = true)
+    opt = tune_tree(X, R, train, val, cfg; localsearch = true)
 
     # BASELINE: greedy uses optimal tree depth to compare the two
     println("greedy CART, depth fixed at $(opt.depth):")
-    greedy = tune_tree(X, R; localsearch = false, depths = [opt.depth])
+    greedy = tune_tree(X, R, train, val, cfg; localsearch = false, depths = [opt.depth])
 
     # BASELINE: best single model
     best_single = best_single_model(R[train, :])
@@ -156,6 +126,12 @@ transform!(groupby(results, :scenario),
     end) => :share_oracle_gain)
 
 CSV.write(joinpath(root, "results", "comparison.csv"), results)
+
+# Wide summary: one row per scenario, one test-reward column per method
+# (lambda_quality = 1 since reward = quality - lambda_dollar * dollars - lambda_carbon * carbon)
+scores = unstack(results, [:scenario, :lambda_dollar, :lambda_carbon], :method, :test)
+insertcols!(scores, 2, :lambda_quality => 1)
+CSV.write(joinpath(root, "results", "test_scores_by_scenario.csv"), scores)
 
 all_outcomes = vcat(outcome_tables...)
 CSV.write(joinpath(root, "results", "outcomes_by_method.csv"), all_outcomes)

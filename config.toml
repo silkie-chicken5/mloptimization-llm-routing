@@ -4,7 +4,7 @@
 seed = 42
 
 # ---------- Data subsetting ----------
-n_prompts = 2500                      # total # of prompts, subsetted from RouterBench
+n_prompts = 5000                      # total # of prompts, subsetted from RouterBench
 split = [0.6, 0.2, 0.2]               # train / val / test, stratified by task
 
 # ---------- Carbon cost inputs ----------
@@ -47,6 +47,12 @@ carbon = 5000
 [tree]
 max_depth = [2, 3, 4, 5]                 # tuned on validation data per scenario
 minbucket = [5, 8, 10, 15, 20, 25]               # min leaf size, tuned on validation data
+
+# ---------- Lambda sweep (sweep_lambda.jl) ----------
+# Lambdas are fixed inputs, not tuned. For each one the tree's depth/minbucket are still tuned on val.
+[sweep]
+joint = [10, 30, 100, 300, 1000, 2000, 3000, 5000, 10000, 30000]       # lambda_dollar = lambda_carbon
+carbon_only = [1000, 3000, 10000, 30000, 100000, 300000, 1000000]      # lambda_dollar = 0
 
 
 # ---------- Model lookup table ----------
