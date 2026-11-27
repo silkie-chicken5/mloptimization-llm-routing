@@ -14,6 +14,7 @@ MODELS = [
     "mistralai/mixtral-8x7b-chat",
     "zero-one-ai/Yi-34B-Chat",
     "meta/llama-2-70b-chat",
+    "WizardLM/WizardLM-13B-V1.2",
 ]
 
 # Cover a variety of tasks ranging from
@@ -44,6 +45,11 @@ def filter_data(routerbench, n_prompts, seed):
     for m in MODELS:
         keep_cols += [m, f"{m}|model_response", f"{m}|total_cost"]  # quality score, response, cost
     routerbench = routerbench[keep_cols].copy()
+
+    # Keep only prompts that every chosen model answered, so the reward matrix has no gaps
+    n_before = len(routerbench)
+    routerbench = routerbench.dropna(subset=keep_cols)
+    print(f"dropped {n_before - len(routerbench)} prompts with a missing model answer")
 
     # Create a task column that only specifies main parent group of eval_name
     # to help later with stratified sampling

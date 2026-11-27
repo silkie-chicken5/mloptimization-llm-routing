@@ -1,0 +1,51 @@
+scenario,quantity,estimate,ci_low,ci_high
+balanced,reward: optimal_tree,0.5444,0.5173,0.5694
+balanced,reward: greedy_tree,0.5384,0.5121,0.5643
+balanced,reward: best_single,0.4947,0.4683,0.5204
+balanced,reward: cheapest,0.2731,0.2472,0.2996
+balanced,reward: oracle,0.7487,0.7322,0.7655
+balanced,difference: optimal_tree - greedy_tree,0.0059,-0.0035,0.0157
+balanced,difference: optimal_tree - best_single,0.0497,0.0277,0.0698
+balanced,difference: greedy_tree - best_single,0.0438,0.0222,0.0642
+balanced,share of oracle gain: optimal_tree,0.1957,0.1141,0.2673
+balanced,share of oracle gain: greedy_tree,0.1723,0.0913,0.2451
+carbon_first,reward: optimal_tree,0.6347,0.6091,0.6602
+carbon_first,reward: greedy_tree,0.6354,0.6101,0.6609
+carbon_first,reward: best_single,0.612,0.5851,0.638
+carbon_first,reward: cheapest,0.2948,0.269,0.3211
+carbon_first,reward: oracle,0.7851,0.767,0.803
+carbon_first,difference: optimal_tree - greedy_tree,-0.0007,-0.0019,-0.0
+carbon_first,difference: optimal_tree - best_single,0.0226,0.0096,0.0357
+carbon_first,difference: greedy_tree - best_single,0.0233,0.0102,0.0365
+carbon_first,share of oracle gain: optimal_tree,0.1307,0.0567,0.204
+carbon_first,share of oracle gain: greedy_tree,0.1349,0.0608,0.2078
+carbon_realistic,reward: optimal_tree,0.5446,0.5194,0.5691
+carbon_realistic,reward: greedy_tree,0.5403,0.5142,0.5648
+carbon_realistic,reward: best_single,0.4917,0.4653,0.5175
+carbon_realistic,reward: cheapest,0.2721,0.2462,0.2986
+carbon_realistic,reward: oracle,0.7415,0.7248,0.7583
+carbon_realistic,difference: optimal_tree - greedy_tree,0.0044,-0.0089,0.0184
+carbon_realistic,difference: optimal_tree - best_single,0.053,0.0336,0.0711
+carbon_realistic,difference: greedy_tree - best_single,0.0486,0.028,0.068
+carbon_realistic,share of oracle gain: optimal_tree,0.2121,0.1391,0.2784
+carbon_realistic,share of oracle gain: greedy_tree,0.1945,0.1161,0.265
+efficiency_first,reward: optimal_tree,0.3356,0.3087,0.3616
+efficiency_first,reward: greedy_tree,0.3332,0.3078,0.3593
+efficiency_first,reward: best_single,0.2364,0.2062,0.2642
+efficiency_first,reward: cheapest,0.18,0.1533,0.2069
+efficiency_first,reward: oracle,0.5804,0.5625,0.5985
+efficiency_first,difference: optimal_tree - greedy_tree,0.0024,-0.0105,0.0153
+efficiency_first,difference: optimal_tree - best_single,0.0992,0.0694,0.1288
+efficiency_first,difference: greedy_tree - best_single,0.0968,0.0663,0.1261
+efficiency_first,share of oracle gain: optimal_tree,0.2884,0.2129,0.3594
+efficiency_first,share of oracle gain: greedy_tree,0.2814,0.2011,0.354
+quality_first,reward: optimal_tree,0.6647,0.6395,0.691
+quality_first,reward: greedy_tree,0.6618,0.6367,0.687
+quality_first,reward: best_single,0.6679,0.6424,0.6927
+quality_first,reward: cheapest,0.315,0.2894,0.3414
+quality_first,reward: oracle,0.8367,0.8202,0.8536
+quality_first,difference: optimal_tree - greedy_tree,0.0029,-0.0061,0.0121
+quality_first,difference: optimal_tree - best_single,-0.0031,-0.0203,0.0149
+quality_first,difference: greedy_tree - best_single,-0.0061,-0.0252,0.0131
+quality_first,share of oracle gain: optimal_tree,-0.0186,-0.1292,0.0864
+quality_first,share of oracle gain: greedy_tree,-0.0359,-0.1641,0.0717

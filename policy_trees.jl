@@ -29,6 +29,7 @@ carbon_of  = outcome_matrix(pairs, prompts.sample_id, :carbon_cost, model_names)
 wh_of      = outcome_matrix(pairs, prompts.sample_id, :wh, model_names)
 test_rows = findall(splits["test"])
 outcome_tables = DataFrame[]
+pick_tables = DataFrame[] #for bootstrapping
 
 # BASELINE: cheapest model (only need to pick once/doesn't depend on lambda so pick outside of loop)
 cheapest = cheapest_model(pairs, prompts.sample_id[train])
@@ -84,6 +85,7 @@ for scenario in scenarios
         "greedy_tree"  => tree_picks(greedy.lnr, X[test_rows, :]),
         "best_single"  => fill(best_single, n_test),
         "cheapest"     => fill(cheapest, n_test),
+        "oracle"       => names(R)[argmax.(eachrow(Matrix(R[test_rows, :])))],  # best model per test prompt, in hindsight
     ]
 
     outcome_rows = DataFrame(method = String[], quality = Float64[],
@@ -102,6 +104,8 @@ for scenario in scenarios
 
         push!(outcome_rows, (method, quality, dollars * 1000,
                              wh / 1000 * cfg["grid_intensity"] * 1000))  # Wh -> kWh -> kg CO2, per 1,000 queries
+        push!(pick_tables, DataFrame(scenario = scenario, method = method,
+                                     sample_id = prompts.sample_id[test_rows], model = picks))
     end
 
     # relative to the best single model (positive "saved" = cheaper / cleaner than best single)
@@ -135,6 +139,8 @@ CSV.write(joinpath(root, "results", "test_scores_by_scenario.csv"), scores)
 
 all_outcomes = vcat(outcome_tables...)
 CSV.write(joinpath(root, "results", "outcomes_by_method.csv"), all_outcomes)
+
+CSV.write(joinpath(root, "results", "test_picks.csv"), vcat(pick_tables...))
 
 println("\n===== Quality, dollars and CO2 on the test rows =====")
 show(transform(all_outcomes, names(all_outcomes, Real) .=> (c -> round.(c, digits = 4)), renamecols = false),

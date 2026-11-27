@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html-aMCEOKRV">
+<html lang="en" id="html-kIgurT8H">
   <head>
     <meta charset="utf-8">
 
@@ -193,7 +193,7 @@ select {
     <style>
       html,
       body,
-      #treevis-aMCEOKRV {
+      #treevis-kIgurT8H {
           
       }
     </style>
@@ -204,17 +204,17 @@ select {
       
       <div class="mainarea">
         <div class="button-row">
-              <button id="collapse-aMCEOKRV">Collapse</button>
-    <button id="expand-aMCEOKRV">Expand</button>
-    <button id="savepng-aMCEOKRV">Save PNG</button>
-    <button id="savehtml-aMCEOKRV">Save HTML</button>
+              <button id="collapse-kIgurT8H">Collapse</button>
+    <button id="expand-kIgurT8H">Expand</button>
+    <button id="savepng-kIgurT8H">Save PNG</button>
+    <button id="savehtml-kIgurT8H">Save HTML</button>
     
 
         </div>
         <div class="button-row">
           
         </div>
-        <div id="treevis-aMCEOKRV"></div>
+        <div id="treevis-kIgurT8H"></div>
       </div>
     </div>
 
@@ -837,19 +837,96 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
   "tasktype": "policy_maximize",
   "lnr": {
     "tree_": {
-      "node_count": 5,
+      "node_count": 11,
       "nodes": [
         {
           "id": 1,
           "parent": -2,
           "lower_child": 2,
-          "upper_child": 3,
+          "upper_child": 9,
           "depth": 0,
           "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
               "feature": 1,
-              "threshold": 13.5
+              "split": [
+                true,
+                true,
+                false,
+                true,
+                false,
+                true
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 1103.5972039356718,
+          "baseline_error": 1201.0547383732192,
+          "subtree_complexity": 5.0,
+          "n_node_samples": 3000,
+          "weighted_n_node_samples": 3000.0,
+          "orig_raw_error": 1103.5972039356718,
+          "orig_baseline_error": 1201.0547383732192,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -30.970120702450057,
+              -30.464653979975278,
+              -31.260102940596127,
+              -29.004608905403355,
+              -31.102089502468697
+            ],
+            "treatment_error_se": [
+              0.0077897018090510506,
+              0.026977815003245077,
+              0.008556833809938838,
+              0.06782711818091265,
+              0.008349951369388417
+            ],
+            "treatment_rank": [
+              3,
+              5,
+              1,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 2,
+          "parent": 1,
+          "lower_child": 3,
+          "upper_child": 6,
+          "depth": 1,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 39.5
             },
             "ordinal_split": {
               "feature": 0,
@@ -884,41 +961,121 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 1040.4238701062823,
-          "baseline_error": 1051.9164215132623,
-          "subtree_complexity": 2.0,
-          "n_node_samples": 3000,
-          "weighted_n_node_samples": 3000.0,
-          "orig_raw_error": 1040.4238701062823,
-          "orig_baseline_error": 1051.9164215132623,
+          "raw_error": 504.44591307668514,
+          "baseline_error": 514.8897245396056,
+          "subtree_complexity": 3.0,
+          "n_node_samples": 2058,
+          "weighted_n_node_samples": 2058.0,
+          "orig_raw_error": 504.44591307668514,
+          "orig_baseline_error": 514.8897245396056,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -8.824486210734666,
-              -8.858054527325868,
-              -9.147497548845074,
-              -8.313407671621382
+              -30.964633334436392,
+              -31.27140432588436,
+              -31.410265149530044,
+              -31.04533687722151,
+              -31.140002044431302
             ],
             "treatment_error_se": [
-              0.007723263549243016,
-              0.011664578625559842,
-              0.007868753730214137,
-              0.02210838009148756
+              0.010141229707192088,
+              0.010642773703257079,
+              0.009535778007983399,
+              0.010929216100254489,
+              0.011012483130838788
             ],
             "treatment_rank": [
               3,
               2,
-              1,
-              4
+              5,
+              4,
+              1
             ]
           }
         },
         {
-          "id": 2,
-          "parent": 1,
+          "id": 3,
+          "parent": 2,
+          "lower_child": 4,
+          "upper_child": 5,
+          "depth": 2,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 36.5
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 13.729739810646237,
+          "baseline_error": 15.480371928516687,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 77,
+          "weighted_n_node_samples": 77.0,
+          "orig_raw_error": 13.729739810646237,
+          "orig_baseline_error": 15.480371928516687,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -31.011103870703256,
+              -31.45941072877397,
+              -31.399796751287855,
+              -31.20736532496406,
+              -31.179890727177735
+            ],
+            "treatment_error_se": [
+              0.054378947360646884,
+              0.04395397985618163,
+              0.04997080410100782,
+              0.055888657169477066,
+              0.05693702483405016
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              4,
+              5,
+              1
+            ]
+          }
+        },
+        {
+          "id": 4,
+          "parent": 3,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 1,
+          "depth": 3,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -958,41 +1115,121 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 51.926814624433526,
-          "baseline_error": 51.926814624433526,
+          "raw_error": 6.037617870042006,
+          "baseline_error": 6.037617870042006,
           "subtree_complexity": 0.0,
-          "n_node_samples": 90,
-          "weighted_n_node_samples": 90.0,
-          "orig_raw_error": 51.926814624433526,
-          "orig_baseline_error": 51.926814624433526,
+          "n_node_samples": 41,
+          "weighted_n_node_samples": 41.0,
+          "orig_raw_error": 6.037617870042006,
+          "orig_baseline_error": 6.037617870042006,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -8.921171749078313,
-              -8.16561674742866,
-              -8.846041965929603,
-              -6.153504273365595
+              -31.099478910297798,
+              -31.470497203275112,
+              -31.51319554761351,
+              -31.317279800732162,
+              -31.196995573550915
             ],
             "treatment_error_se": [
-              0.05271557110581589,
-              0.07604159505179044,
-              0.05312969906483114,
-              0.15341256309355225
+              0.07750404789006668,
+              0.05876418177218504,
+              0.05519933710724441,
+              0.0710581402576634,
+              0.07787756353797608
             ],
             "treatment_rank": [
-              1,
               3,
               2,
-              4
+              4,
+              5,
+              1
             ]
           }
         },
         {
-          "id": 3,
-          "parent": 1,
-          "lower_child": 4,
-          "upper_child": 5,
-          "depth": 1,
+          "id": 5,
+          "parent": 3,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 3,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 7.692121940604232,
+          "baseline_error": 7.692121940604232,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 36,
+          "weighted_n_node_samples": 36.0,
+          "orig_raw_error": 7.692121940604232,
+          "orig_baseline_error": 7.692121940604232,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -30.910454520053893,
+              -31.44678446614774,
+              -31.270648122139264,
+              -31.082184949783652,
+              -31.160410207697268
+            ],
+            "treatment_error_se": [
+              0.07216878364844068,
+              0.06596206874435948,
+              0.08124967025345417,
+              0.08320463312789582,
+              0.08333333333348492
+            ],
+            "treatment_rank": [
+              2,
+              3,
+              5,
+              4,
+              1
+            ]
+          }
+        },
+        {
+          "id": 6,
+          "parent": 2,
+          "lower_child": 7,
+          "upper_child": 8,
+          "depth": 2,
           "split_type": "MIXED",
           "split_mixed": {
             "parallel_split": {
@@ -1032,41 +1269,44 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 988.4970554818486,
-          "baseline_error": 993.2279264054416,
+          "raw_error": 490.71617326603894,
+          "baseline_error": 494.81907634466785,
           "subtree_complexity": 1.0,
-          "n_node_samples": 2910,
-          "weighted_n_node_samples": 2910.0,
-          "orig_raw_error": 988.4970554818486,
-          "orig_baseline_error": 993.2279264054416,
+          "n_node_samples": 1981,
+          "weighted_n_node_samples": 1981.0,
+          "orig_raw_error": 490.71617326603894,
+          "orig_baseline_error": 494.81907634466785,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -8.821495936352894,
-              -8.879470128765986,
-              -9.156820917388847,
-              -8.380208807649907
+              -30.96282705917515,
+              -31.26409665651403,
+              -31.41067204840158,
+              -31.039038951690873,
+              -31.138451600932363
             ],
             "treatment_error_se": [
-              0.0077868422873888276,
-              0.011568246632855776,
-              0.007881032760313787,
-              0.02111525267494493
+              0.010319073822727108,
+              0.01089062785951949,
+              0.009714031927991139,
+              0.011120237224724275,
+              0.011222989216221495
             ],
             "treatment_rank": [
               3,
               2,
-              1,
-              4
+              5,
+              4,
+              1
             ]
           }
         },
         {
-          "id": 4,
-          "parent": 3,
+          "id": 7,
+          "parent": 6,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 2,
+          "depth": 3,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -1106,41 +1346,44 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 972.2144390227533,
-          "baseline_error": 972.2144390227533,
+          "raw_error": 473.7741184024526,
+          "baseline_error": 473.7741184024526,
           "subtree_complexity": 0.0,
-          "n_node_samples": 2861,
-          "weighted_n_node_samples": 2861.0,
-          "orig_raw_error": 972.2144390227533,
-          "orig_baseline_error": 972.2144390227533,
+          "n_node_samples": 1932,
+          "weighted_n_node_samples": 1932.0,
+          "orig_raw_error": 473.7741184024526,
+          "orig_baseline_error": 473.7741184024526,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -8.819344457651942,
-              -8.874565539924253,
-              -9.158320054365424,
-              -8.377749450599817
+              -30.959108764359915,
+              -31.26281328153996,
+              -31.41522982108854,
+              -31.048886123006778,
+              -31.141259068980276
             ],
             "treatment_error_se": [
-              0.007820012108456302,
-              0.011688960676230141,
-              0.007921094007014658,
-              0.021468510210321534
+              0.01041230475966346,
+              0.011035261270288695,
+              0.009775480578499446,
+              0.011290206468613605,
+              0.011367046600400962
             ],
             "treatment_rank": [
               3,
               2,
-              1,
-              4
+              5,
+              4,
+              1
             ]
           }
         },
         {
-          "id": 5,
-          "parent": 3,
+          "id": 8,
+          "parent": 6,
           "lower_child": -2,
           "upper_child": -2,
-          "depth": 2,
+          "depth": 3,
           "split_type": "LEAF",
           "split_mixed": {
             "parallel_split": {
@@ -1180,37 +1423,271 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
             "complexity": 0.0
           },
           "missingdatamode": "NONE",
-          "raw_error": 16.282616459095312,
-          "baseline_error": 16.282616459095312,
+          "raw_error": 16.94205486358637,
+          "baseline_error": 16.94205486358637,
           "subtree_complexity": 0.0,
           "n_node_samples": 49,
           "weighted_n_node_samples": 49.0,
-          "orig_raw_error": 16.282616459095312,
-          "orig_baseline_error": 16.282616459095312,
+          "orig_raw_error": 16.94205486358637,
+          "orig_baseline_error": 16.94205486358637,
           "dirty": false,
           "fit": {
             "treatment_error": [
-              -8.947115947852906,
-              -9.165838060932767,
-              -9.069289674737007,
-              -8.523805144799047
+              -31.109434111890636,
+              -31.314698298347288,
+              -31.230965582456705,
+              -30.65077905409204,
+              -31.02775714647275
             ],
             "treatment_error_se": [
-              0.07105572948658095,
-              0.06699198421615342,
-              0.0706959513293503,
-              0.02826635485374385
+              0.07105572948631361,
+              0.06699198421614043,
+              0.07069595132939953,
+              0.02826635485357969,
+              0.06886887353404222
             ],
             "treatment_rank": [
               2,
               3,
               1,
+              5,
+              4
+            ]
+          }
+        },
+        {
+          "id": 9,
+          "parent": 1,
+          "lower_child": 10,
+          "upper_child": 11,
+          "depth": 1,
+          "split_type": "MIXED",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 1,
+              "threshold": 11.5
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 2,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": true,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 599.1512908589867,
+          "baseline_error": 604.0038579229907,
+          "subtree_complexity": 1.0,
+          "n_node_samples": 942,
+          "weighted_n_node_samples": 942.0,
+          "orig_raw_error": 599.1512908589867,
+          "orig_baseline_error": 604.0038579229907,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -30.982109028747338,
+              -28.70213570833944,
+              -30.932041554199202,
+              -24.54620320901481,
+              -31.01926146493256
+            ],
+            "treatment_error_se": [
+              0.011150725773461314,
+              0.04509805979450187,
+              0.011919001256084891,
+              0.12381568384769415,
+              0.010848387944183906
+            ],
+            "treatment_rank": [
+              5,
+              1,
+              3,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 10,
+          "parent": 9,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 2,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 28.514716319280257,
+          "baseline_error": 28.514716319280257,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 48,
+          "weighted_n_node_samples": 48.0,
+          "orig_raw_error": 28.514716319280257,
+          "orig_baseline_error": 28.514716319280257,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -31.066397930067595,
+              -28.425684698182128,
+              -30.832679270361478,
+              -22.410432446717476,
+              -30.965302782900633
+            ],
+            "treatment_error_se": [
+              0.07415213931268018,
+              0.19464654062831557,
+              0.07669302007987398,
+              0.5696408352928578,
+              0.0732473947915154
+            ],
+            "treatment_rank": [
+              1,
+              5,
+              3,
+              2,
+              4
+            ]
+          }
+        },
+        {
+          "id": 11,
+          "parent": 9,
+          "lower_child": -2,
+          "upper_child": -2,
+          "depth": 2,
+          "split_type": "LEAF",
+          "split_mixed": {
+            "parallel_split": {
+              "feature": 0,
+              "threshold": 0.0
+            },
+            "ordinal_split": {
+              "feature": 0,
+              "split": []
+            },
+            "categoric_split": {
+              "feature": 0,
+              "split": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ]
+            },
+            "do_parallel": false,
+            "do_ordinal": false
+          },
+          "split_hyperplane": {
+            "standardized_weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "threshold": 0.0,
+            "weights": {
+              "n": 9,
+              "nzval": [],
+              "nzind": []
+            },
+            "complexity": 0.0
+          },
+          "missingdatamode": "NONE",
+          "raw_error": 570.6365745397064,
+          "baseline_error": 570.6365745397064,
+          "subtree_complexity": 0.0,
+          "n_node_samples": 894,
+          "weighted_n_node_samples": 894.0,
+          "orig_raw_error": 570.6365745397064,
+          "orig_baseline_error": 570.6365745397064,
+          "dirty": false,
+          "fit": {
+            "treatment_error": [
+              -30.977583450152952,
+              -28.71697871559619,
+              -30.937376441922037,
+              -24.660875464708628,
+              -31.022158575377226
+            ],
+            "treatment_error_se": [
+              0.011033965837686956,
+              0.046303784304950794,
+              0.0118383512145151,
+              0.12568467828437338,
+              0.010724440875325428
+            ],
+            "treatment_rank": [
+              5,
+              1,
+              3,
+              2,
               4
             ]
           }
         }
       ],
-      "capacity": 5
+      "capacity": 11
     },
     "prb_": {
       "data": {
@@ -1375,50 +1852,57 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
         "target": {
           "rewards": {
             "n_samples": 0,
-            "n_features": 4,
+            "n_features": 5,
             "feature_names": [
               "mistral-7b-chat",
               "mixtral-8x7b-chat",
               "Yi-34B-Chat",
-              "llama-2-70b-chat"
+              "llama-2-70b-chat",
+              "WizardLM-13B-V1.2"
             ],
             "X_numeric": [
+              [],
               [],
               [],
               [],
               []
             ],
             "X_numeric_means": [
-              0.32617781769888926,
-              0.35974613428948715,
-              0.6491891558090598,
-              -0.18490072141486008
+              0.30909272566295987,
+              -0.1963739968128328,
+              0.5990749638079542,
+              -1.6564190713828577,
+              0.44106152568182794
             ],
-            "n_numeric_features": 4,
-            "n_numeric_orig_features": 4,
+            "n_numeric_features": 5,
+            "n_numeric_orig_features": 5,
             "X_mins": [
-              -0.2730227507975807,
-              -2.6609944966267505,
-              -0.23616897625468522,
-              -9.498136356016161
+              -1.0408511070055748,
+              -8.869981655422501,
+              -0.7872299208489507,
+              -31.660454520053868,
+              -0.36263045585485953
             ],
             "X_maxs": [
-              0.9998279629799637,
-              0.9940602801414582,
-              0.9995527102722449,
-              0.984680425232232
+              0.9994265432665457,
+              0.9802009338048605,
+              0.9985090342408164,
+              0.9489347507741067,
+              0.9993822309099577
             ],
             "numeric_features": [
               1,
               2,
               3,
-              4
+              4,
+              5
             ],
             "numeric_feature_map": {
               "1": 1,
               "2": 2,
               "3": 3,
-              "4": 4
+              "4": 4,
+              "5": 5
             },
             "X_ordinal": [],
             "X_ordinal_medians": [],
@@ -1432,9 +1916,11 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               [],
               [],
               [],
+              [],
               []
             ],
             "X_categoric_modes": [
+              1,
               1,
               1,
               1,
@@ -1444,17 +1930,27 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               1,
               1,
               1,
+              1,
               1
             ],
             "n_max_categoric_levels": 1,
             "onehot_start_index": [
-              4,
-              4,
-              4,
-              4,
-              4
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
             ],
             "categoric_labelmap": [
+              {
+                "levels": [
+                  "missing"
+                ],
+                "level_type": {
+                  "x": "Any"
+                }
+              },
               {
                 "levels": [
                   "missing"
@@ -1495,22 +1991,41 @@ window.hsluv={hsluvToRgb:Q,rgbToHsluv:R,hpluvToRgb:S,rgbToHpluv:T,hsluvToHex:fun
               "mistral-7b-chat",
               "mixtral-8x7b-chat",
               "Yi-34B-Chat",
-              "llama-2-70b-chat"
+              "llama-2-70b-chat",
+              "WizardLM-13B-V1.2"
             ]
           },
-          "reward_min": -9.498136356016161,
-          "reward_max": 0.9998279629799637
+          "reward_min": -31.660454520053868,
+          "reward_max": 0.9994265432665457
         },
         "sample_weight": [],
         "sample_inds": []
       },
       "baseline": {
-        "baseline_error": 1051.9164215132623
+        "baseline_error": 1201.0547383732192
       }
     }
   },
   "data_content": {},
   "extra_content": [
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
+    {
+      "node_summary_include_default": true
+    },
     {
       "node_summary_include_default": true
     },
@@ -3662,13 +4177,13 @@ var updateTargetQuestion = function (i, info) {
   if (info.question === undefined) {
     loadtree(info);
     while (i <= 0) {
-      $('#target-question-aMCEOKRV-' + i).hide();
+      $('#target-question-kIgurT8H-' + i).hide();
       i = i + 1;
     }
   } else {
-    $('#target-question-aMCEOKRV-' + i).show();
-    $('#target-question-label-aMCEOKRV-' + i).html(info.question);
-    var nextTargetQuestion = $('#target-question-select-aMCEOKRV-' + i);
+    $('#target-question-kIgurT8H-' + i).show();
+    $('#target-question-label-kIgurT8H-' + i).html(info.question);
+    var nextTargetQuestion = $('#target-question-select-kIgurT8H-' + i);
     nextTargetQuestion.find('option').remove().end();
     info.responses.forEach(function (r) {
       nextTargetQuestion.append('<option>' + r.answer + '</option>');
@@ -3679,11 +4194,11 @@ var updateTargetQuestion = function (i, info) {
 }
 
 var changeHandler = function () {
-  var cur_i = parseInt(this.getAttribute('id').split('select-aMCEOKRV-')[1]);
+  var cur_i = parseInt(this.getAttribute('id').split('select-kIgurT8H-')[1]);
 
   var info = treeinfo;
   for (var i = 1; i <= cur_i; i++) {
-    response = $('#target-question-select-aMCEOKRV-' + i).val();
+    response = $('#target-question-select-kIgurT8H-' + i).val();
     info = info.responses.find(function (r) {
         return r.answer == response;
     });
@@ -3693,32 +4208,32 @@ var changeHandler = function () {
   updateTargetQuestion(cur_i + 1, info);
 }
 
-$('.target-question-aMCEOKRV').change(changeHandler);
+$('.target-question-kIgurT8H').change(changeHandler);
 
 var loadtree = function (info) {
-  tree = new Tree(info, document.querySelector('#treevis-aMCEOKRV'))
+  tree = new Tree(info, document.querySelector('#treevis-kIgurT8H'))
 };
 updateTargetQuestion(1, treeinfo);
 
 
         // Assign handlers to buttons
-            d3.selectAll("#collapse-aMCEOKRV").on('click', function(d) {
+            d3.selectAll("#collapse-kIgurT8H").on('click', function(d) {
       collapseChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#expand-aMCEOKRV").on('click', function(d) {
+    d3.selectAll("#expand-kIgurT8H").on('click', function(d) {
       expandChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#savepng-aMCEOKRV").on('click', function(d) {
-      saveSvgAsPng(document.querySelector('#treevis-aMCEOKRV svg'),
+    d3.selectAll("#savepng-kIgurT8H").on('click', function(d) {
+      saveSvgAsPng(document.querySelector('#treevis-kIgurT8H svg'),
                    "tree-" + new Date().toISOString() + ".png");
     });
-    d3.selectAll("#savehtml-aMCEOKRV").on('click', function(d) {
-      var root = document.getElementById("html-aMCEOKRV");
+    d3.selectAll("#savehtml-kIgurT8H").on('click', function(d) {
+      var root = document.getElementById("html-kIgurT8H");
       if (!root) {
         // In jupyter, the root html element doesn't exist
-        root = document.getElementById("treevis-aMCEOKRV");
+        root = document.getElementById("treevis-kIgurT8H");
         root = root.parentNode.parentNode;
       }
 
