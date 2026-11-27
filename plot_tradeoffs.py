@@ -1,8 +1,10 @@
 """Plot the quality vs. dollar / CO2 tradeoff from results/lambda_sweep.csv (made by sweep_lambda.jl).
 
-Writes two figures to results/:
-  tradeoff_frontier.png  quality vs $ and vs CO2, one curve per method across lambda
-  tradeoff_relative.png  % quality lost and % $ / CO2 saved vs always using Yi-34B, across lambda
+Writes two figures per split to results/:
+  tradeoff_frontier_<split>.png  quality vs $ and vs CO2, one curve per method across lambda
+  tradeoff_relative_<split>.png  % quality lost and % $ / CO2 saved vs always using Yi-34B, across lambda
+
+Use the *_val figures to choose lambdas; report the *_test figures (test never informs the choice).
 """
 from pathlib import Path
 
@@ -53,7 +55,7 @@ def lam(df):
     return df["lambda_carbon"]
 
 
-def plot_frontier(sweep_df, refs, outcomes):
+def plot_frontier(sweep_df, refs, split):
     cost_cols = [("dollars_per_1k", "$ per 1,000 queries", "linear"),
                  ("kg_co2_per_1k", "kg CO₂ per 1,000 queries (log scale)", "log")]
     fig, axes = plt.subplots(2, 2, figsize=(12, 9), sharey=True)
@@ -97,27 +99,30 @@ def plot_frontier(sweep_df, refs, outcomes):
                                 textcoords="offset points", xytext=LABEL_OFFSETS[col][name], fontsize=8, color=INK,
                                 arrowprops=dict(arrowstyle="-", color=MUTED, lw=0.8))
 
-            # carbon_realistic is off both sweeps (lambda_dollar=1000, lambda_carbon=5000): plot it on its own
+            # named scenarios on neither sweep (carbon_realistic: lambda_dollar=1000, lambda_carbon=5000)
             if sweep == "joint":
-                cr = outcomes[(outcomes["scenario"] == "carbon_realistic") & (outcomes["method"] == "optimal_tree")]
-                ax.scatter(cr[col], cr["quality"], marker="*", s=180, color=BLUE, edgecolors=SURFACE,
-                           linewidths=1.5, zorder=5, label="carbon_realistic, optimal tree (λ$=1000, λCO₂=5000)")
+                off = sweep_df[(sweep_df["sweep"] == "off_sweep") & (sweep_df["method"] == "optimal_tree")]
+                for _, pt in off.iterrows():
+                    ax.scatter(pt[col], pt["quality"], marker="*", s=180, color=BLUE, edgecolors=SURFACE,
+                               linewidths=1.5, zorder=5,
+                               label=f"{pt['scenario']}, optimal tree (λ$={pt['lambda_dollar']:,.0f}, "
+                                     f"λCO₂={pt['lambda_carbon']:,.0f})")
 
             ax.set_xlabel(xlabel)
             if c == 0:
-                ax.set_ylabel("Mean quality on test set")
+                ax.set_ylabel(f"Mean quality on {split} set")
             ax.set_title(SWEEP_TITLES[sweep] if c == 0 else "", loc="left", fontsize=11, color=INK)
 
     handles, labels = axes[0, 0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=9, bbox_to_anchor=(0.5, -0.01))
-    fig.suptitle("Quality vs. cost across λ: moving left saves $ / CO₂, moving down loses quality",
+    fig.suptitle(f"[{split.upper()} set] Quality vs. cost across λ: moving left saves $ / CO₂, moving down loses quality",
                  x=0.02, ha="left", fontsize=13, color=INK)
     fig.tight_layout(rect=(0, 0.06, 1, 0.97))
-    fig.savefig(RESULTS_DIR / "tradeoff_frontier.png", dpi=200)
+    fig.savefig(RESULTS_DIR / f"tradeoff_frontier_{split}.png", dpi=200)
     plt.close(fig)
 
 
-def plot_relative(sweep_df, refs):
+def plot_relative(sweep_df, refs, split):
     base = refs.set_index("model").loc[REFERENCE_MODEL]
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), sharey=True)
 
@@ -165,21 +170,23 @@ def plot_relative(sweep_df, refs):
     axes[0].set_ylabel(f"% vs. always using {REFERENCE_MODEL}")
     handles, labels = axes[0].get_legend_handles_labels()
     fig.legend(handles, labels, loc="lower center", ncol=3, fontsize=9, bbox_to_anchor=(0.5, -0.01))
-    fig.suptitle(f"Optimal policy tree: % saved vs. % quality lost, relative to always routing to {REFERENCE_MODEL}\n"
+    fig.suptitle(f"[{split.upper()} set] Optimal policy tree: % saved vs. % quality lost, relative to always routing to {REFERENCE_MODEL}\n"
                  "Negative 'saved' = uses more than Yi; ▼ marks points below −100% with their actual value",
                  x=0.02, ha="left", fontsize=13, color=INK)
     fig.tight_layout(rect=(0, 0.07, 1, 0.95))
-    fig.savefig(RESULTS_DIR / "tradeoff_relative.png", dpi=200)
+    fig.savefig(RESULTS_DIR / f"tradeoff_relative_{split}.png", dpi=200)
     plt.close(fig)
 
 
 def main():
-    df = pd.read_csv(RESULTS_DIR / "lambda_sweep.csv")
-    outcomes = pd.read_csv(RESULTS_DIR / "outcomes_by_method.csv")
-    refs = df[df["sweep"] == "reference"]
-    sweep_df = df[df["sweep"] != "reference"]
-    plot_frontier(sweep_df, refs, outcomes)
-    plot_relative(sweep_df, refs)
+    df = pd.read_csv(RESULTS_DIR / "lambda_sweep.csv", keep_default_na=False, na_values=[""])
+    df["scenario"] = df["scenario"].fillna("")
+    for split in ["val", "test"]:
+        d = df[df["split"] == split]
+        refs = d[d["sweep"] == "reference"]
+        sweep_df = d[d["sweep"] != "reference"]
+        plot_frontier(sweep_df, refs, split)
+        plot_relative(sweep_df, refs, split)
 
 
 if __name__ == "__main__":

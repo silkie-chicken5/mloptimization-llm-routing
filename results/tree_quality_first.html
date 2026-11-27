@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html-PwrHDo6P">
+<html lang="en" id="html-LoyWT1Rj">
   <head>
     <meta charset="utf-8">
 
@@ -193,7 +193,7 @@ select {
     <style>
       html,
       body,
-      #treevis-PwrHDo6P {
+      #treevis-LoyWT1Rj {
           
       }
     </style>
@@ -204,17 +204,17 @@ select {
       
       <div class="mainarea">
         <div class="button-row">
-              <button id="collapse-PwrHDo6P">Collapse</button>
-    <button id="expand-PwrHDo6P">Expand</button>
-    <button id="savepng-PwrHDo6P">Save PNG</button>
-    <button id="savehtml-PwrHDo6P">Save HTML</button>
+              <button id="collapse-LoyWT1Rj">Collapse</button>
+    <button id="expand-LoyWT1Rj">Expand</button>
+    <button id="savepng-LoyWT1Rj">Save PNG</button>
+    <button id="savehtml-LoyWT1Rj">Save HTML</button>
     
 
         </div>
         <div class="button-row">
           
         </div>
-        <div id="treevis-PwrHDo6P"></div>
+        <div id="treevis-LoyWT1Rj"></div>
       </div>
     </div>
 
@@ -4817,13 +4817,13 @@ var updateTargetQuestion = function (i, info) {
   if (info.question === undefined) {
     loadtree(info);
     while (i <= 0) {
-      $('#target-question-PwrHDo6P-' + i).hide();
+      $('#target-question-LoyWT1Rj-' + i).hide();
       i = i + 1;
     }
   } else {
-    $('#target-question-PwrHDo6P-' + i).show();
-    $('#target-question-label-PwrHDo6P-' + i).html(info.question);
-    var nextTargetQuestion = $('#target-question-select-PwrHDo6P-' + i);
+    $('#target-question-LoyWT1Rj-' + i).show();
+    $('#target-question-label-LoyWT1Rj-' + i).html(info.question);
+    var nextTargetQuestion = $('#target-question-select-LoyWT1Rj-' + i);
     nextTargetQuestion.find('option').remove().end();
     info.responses.forEach(function (r) {
       nextTargetQuestion.append('<option>' + r.answer + '</option>');
@@ -4834,11 +4834,11 @@ var updateTargetQuestion = function (i, info) {
 }
 
 var changeHandler = function () {
-  var cur_i = parseInt(this.getAttribute('id').split('select-PwrHDo6P-')[1]);
+  var cur_i = parseInt(this.getAttribute('id').split('select-LoyWT1Rj-')[1]);
 
   var info = treeinfo;
   for (var i = 1; i <= cur_i; i++) {
-    response = $('#target-question-select-PwrHDo6P-' + i).val();
+    response = $('#target-question-select-LoyWT1Rj-' + i).val();
     info = info.responses.find(function (r) {
         return r.answer == response;
     });
@@ -4848,32 +4848,32 @@ var changeHandler = function () {
   updateTargetQuestion(cur_i + 1, info);
 }
 
-$('.target-question-PwrHDo6P').change(changeHandler);
+$('.target-question-LoyWT1Rj').change(changeHandler);
 
 var loadtree = function (info) {
-  tree = new Tree(info, document.querySelector('#treevis-PwrHDo6P'))
+  tree = new Tree(info, document.querySelector('#treevis-LoyWT1Rj'))
 };
 updateTargetQuestion(1, treeinfo);
 
 
         // Assign handlers to buttons
-            d3.selectAll("#collapse-PwrHDo6P").on('click', function(d) {
+            d3.selectAll("#collapse-LoyWT1Rj").on('click', function(d) {
       collapseChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#expand-PwrHDo6P").on('click', function(d) {
+    d3.selectAll("#expand-LoyWT1Rj").on('click', function(d) {
       expandChildren(tree.root, true);
       tree.update(tree.root);
     });
-    d3.selectAll("#savepng-PwrHDo6P").on('click', function(d) {
-      saveSvgAsPng(document.querySelector('#treevis-PwrHDo6P svg'),
+    d3.selectAll("#savepng-LoyWT1Rj").on('click', function(d) {
+      saveSvgAsPng(document.querySelector('#treevis-LoyWT1Rj svg'),
                    "tree-" + new Date().toISOString() + ".png");
     });
-    d3.selectAll("#savehtml-PwrHDo6P").on('click', function(d) {
-      var root = document.getElementById("html-PwrHDo6P");
+    d3.selectAll("#savehtml-LoyWT1Rj").on('click', function(d) {
+      var root = document.getElementById("html-LoyWT1Rj");
       if (!root) {
         // In jupyter, the root html element doesn't exist
-        root = document.getElementById("treevis-PwrHDo6P");
+        root = document.getElementById("treevis-LoyWT1Rj");
         root = root.parentNode.parentNode;
       }
 
