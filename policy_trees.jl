@@ -29,6 +29,7 @@ carbon_of  = outcome_matrix(pairs, prompts.sample_id, :carbon_cost, model_names)
 wh_of      = outcome_matrix(pairs, prompts.sample_id, :wh, model_names)
 test_rows = findall(splits["test"])
 outcome_tables = DataFrame[]
+routing_tables = DataFrame[]   # share of test prompts each tree sends to each model, by task
 
 # BASELINE: cheapest model (only need to pick once/doesn't depend on lambda so pick outside of loop)
 cheapest = cheapest_model(pairs, prompts.sample_id[train])
@@ -112,6 +113,19 @@ for scenario in scenarios
     insertcols!(outcome_rows, 1, :scenario => scenario)
     push!(outcome_tables, outcome_rows)
 
+    # ---- Where each tree routes the test prompts, per task (and overall) ----
+    test_tasks = String.(prompts.task[test_rows])
+    for (method, picks) in picks_by_method[1:2]   # optimal_tree, greedy_tree
+        for task in vcat(sort(unique(test_tasks)), "all")
+            idx = task == "all" ? trues(length(picks)) : test_tasks .== task
+            for m in model_names
+                n = count(==(m), picks[idx])
+                push!(routing_tables, DataFrame(scenario = scenario, method = method, task = task, model = m,
+                                                n_prompts = n, share = n / count(idx)))
+            end
+        end
+    end
+
     # tree diagrams saved to files (optimal & greedy)
     IAI.write_html(joinpath(root, "results", "tree_$scenario.html"), opt.lnr)
     IAI.write_html(joinpath(root, "results", "greedy_tree_$scenario.html"), greedy.lnr)
@@ -132,6 +146,8 @@ CSV.write(joinpath(root, "results", "comparison.csv"), results)
 scores = unstack(results, [:scenario, :lambda_dollar, :lambda_carbon], :method, :test)
 insertcols!(scores, 2, :lambda_quality => 1)
 CSV.write(joinpath(root, "results", "test_scores_by_scenario.csv"), scores)
+
+CSV.write(joinpath(root, "results", "routing_by_task.csv"), vcat(routing_tables...))
 
 all_outcomes = vcat(outcome_tables...)
 CSV.write(joinpath(root, "results", "outcomes_by_method.csv"), all_outcomes)
