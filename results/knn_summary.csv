@@ -1,0 +1,6 @@
+scenario,best_k,val,test,models_used_on_test
+quality_first,400,0.6741,0.6773,2
+balanced,400,0.5413,0.5462,3
+efficiency_first,100,0.3315,0.3287,4
+carbon_first,200,0.6414,0.6306,3
+carbon_realistic,200,0.5385,0.544,4

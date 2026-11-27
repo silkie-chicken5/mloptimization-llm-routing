@@ -51,6 +51,8 @@ pairs["model"] = pairs["model"].str.split("/").str[-1]           # same short na
 pairs["kg_co2"] = pairs["wh"] / 1000 * cfg["grid_intensity"]     # Wh -> kWh -> kg CO2
 
 picks = pd.read_csv(RESULTS / "test_picks.csv")
+# Add the KNN router's test picks (from knn_router.py) so it is scored like every other method
+picks = pd.concat([picks, pd.read_csv(RESULTS / "knn_picks.csv")], ignore_index=True)
 
 # Add "always Yi-34B" as a method in every scenario, for the RQ1 comparison
 test_ids = np.sort(picks["sample_id"].unique())
@@ -94,15 +96,15 @@ for scenario, rows in chosen.groupby("scenario"):
     point = reward.mean()
     boot = pd.DataFrame(reward.to_numpy()[draws].mean(axis=1), columns=reward.columns)
 
-    for method in ["optimal_tree", "greedy_tree", "best_single", "cheapest", "oracle"]:
+    for method in ["optimal_tree", "greedy_tree", "best_single", "knn", "cheapest", "oracle"]:
         reward_rows.append({"scenario": scenario, "quantity": f"reward: {method}",
                             **summarize(point[method], boot[method])})
 
-    for a, b in [("optimal_tree", "greedy_tree"), ("optimal_tree", "best_single"), ("greedy_tree", "best_single")]:
+    for a, b in [("optimal_tree", "greedy_tree"), ("optimal_tree", "best_single"), ("greedy_tree", "best_single"), ("optimal_tree", "knn"), ("knn", "best_single")]:
         reward_rows.append({"scenario": scenario, "quantity": f"difference: {a} - {b}",
                             **summarize(point[a] - point[b], boot[a] - boot[b])})
 
-    for method in ["optimal_tree", "greedy_tree"]:
+    for method in ["optimal_tree", "greedy_tree", "knn"]:
         share_point = (point[method] - point["best_single"]) / (point["oracle"] - point["best_single"])
         share_boot = (boot[method] - boot["best_single"]) / (boot["oracle"] - boot["best_single"])
         reward_rows.append({"scenario": scenario, "quantity": f"share of oracle gain: {method}",

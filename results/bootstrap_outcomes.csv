@@ -6,6 +6,8 @@ balanced,cheapest,quality,level,0.3196,0.2941,0.3459
 balanced,cheapest,quality,% change vs always Yi-34B,-53.4816,-57.3424,-49.4766
 balanced,greedy_tree,quality,level,0.6673,0.6418,0.6926
 balanced,greedy_tree,quality,% change vs always Yi-34B,-2.8801,-5.8913,0.0737
+balanced,knn,quality,level,0.6764,0.6511,0.7012
+balanced,knn,quality,% change vs always Yi-34B,-1.5676,-4.382,1.2243
 balanced,optimal_tree,quality,level,0.6723,0.646,0.6972
 balanced,optimal_tree,quality,% change vs always Yi-34B,-2.1509,-5.2653,0.803
 balanced,oracle,quality,level,0.8422,0.8254,0.8595
@@ -17,6 +19,8 @@ balanced,cheapest,dollars_per_1k,level,0.0463,0.0446,0.0486
 balanced,cheapest,dollars_per_1k,% change vs always Yi-34B,-75.8426,-76.7453,-74.6361
 balanced,greedy_tree,dollars_per_1k,level,0.1258,0.1229,0.1288
 balanced,greedy_tree,dollars_per_1k,% change vs always Yi-34B,-34.3552,-35.5843,-33.1125
+balanced,knn,dollars_per_1k,level,0.127,0.1238,0.1303
+balanced,knn,dollars_per_1k,% change vs always Yi-34B,-33.763,-34.9723,-32.4549
 balanced,optimal_tree,dollars_per_1k,level,0.125,0.122,0.128
 balanced,optimal_tree,dollars_per_1k,% change vs always Yi-34B,-34.797,-36.0218,-33.5378
 balanced,oracle,dollars_per_1k,level,0.0913,0.0872,0.0956
@@ -28,6 +32,8 @@ balanced,cheapest,kg_co2_per_1k,level,0.006,0.0052,0.007
 balanced,cheapest,kg_co2_per_1k,% change vs always Yi-34B,-66.8685,-71.2495,-60.798
 balanced,greedy_tree,kg_co2_per_1k,level,0.0734,0.0671,0.0799
 balanced,greedy_tree,kg_co2_per_1k,% change vs always Yi-34B,305.435,268.3316,345.8343
+balanced,knn,kg_co2_per_1k,level,0.0769,0.0708,0.083
+balanced,knn,kg_co2_per_1k,% change vs always Yi-34B,324.8784,291.1142,363.2869
 balanced,optimal_tree,kg_co2_per_1k,level,0.0717,0.0644,0.0792
 balanced,optimal_tree,kg_co2_per_1k,% change vs always Yi-34B,296.4564,255.664,337.3797
 balanced,oracle,kg_co2_per_1k,level,0.0534,0.0413,0.0666
@@ -39,6 +45,8 @@ carbon_first,cheapest,quality,level,0.3196,0.2941,0.3459
 carbon_first,cheapest,quality,% change vs always Yi-34B,-53.4816,-57.3424,-49.4766
 carbon_first,greedy_tree,quality,level,0.6703,0.6455,0.6954
 carbon_first,greedy_tree,quality,% change vs always Yi-34B,-2.4426,-4.2818,-0.5985
+carbon_first,knn,quality,level,0.6673,0.642,0.6916
+carbon_first,knn,quality,% change vs always Yi-34B,-2.8801,-4.7261,-0.9816
 carbon_first,optimal_tree,quality,level,0.6703,0.6455,0.6954
 carbon_first,optimal_tree,quality,% change vs always Yi-34B,-2.4426,-4.2818,-0.5985
 carbon_first,oracle,quality,level,0.8186,0.8004,0.8369
@@ -50,6 +58,8 @@ carbon_first,cheapest,dollars_per_1k,level,0.0463,0.0446,0.0486
 carbon_first,cheapest,dollars_per_1k,% change vs always Yi-34B,-75.8426,-76.7453,-74.6361
 carbon_first,greedy_tree,dollars_per_1k,level,0.1227,0.1202,0.1253
 carbon_first,greedy_tree,dollars_per_1k,% change vs always Yi-34B,-35.9858,-37.1894,-34.8131
+carbon_first,knn,dollars_per_1k,level,0.1245,0.1215,0.1277
+carbon_first,knn,dollars_per_1k,% change vs always Yi-34B,-35.0501,-36.3193,-33.7562
 carbon_first,optimal_tree,dollars_per_1k,level,0.1234,0.1209,0.1263
 carbon_first,optimal_tree,dollars_per_1k,% change vs always Yi-34B,-35.6132,-36.8852,-34.2903
 carbon_first,oracle,dollars_per_1k,level,0.0937,0.0893,0.0984
@@ -61,6 +71,8 @@ carbon_first,cheapest,kg_co2_per_1k,level,0.006,0.0052,0.007
 carbon_first,cheapest,kg_co2_per_1k,% change vs always Yi-34B,-66.8685,-71.2495,-60.798
 carbon_first,greedy_tree,kg_co2_per_1k,level,0.0084,0.0082,0.0087
 carbon_first,greedy_tree,kg_co2_per_1k,% change vs always Yi-34B,-53.4466,-56.2102,-50.496
+carbon_first,knn,kg_co2_per_1k,level,0.0088,0.0085,0.0093
+carbon_first,knn,kg_co2_per_1k,% change vs always Yi-34B,-51.111,-54.2028,-47.8621
 carbon_first,optimal_tree,kg_co2_per_1k,level,0.0086,0.0082,0.009
 carbon_first,optimal_tree,kg_co2_per_1k,% change vs always Yi-34B,-52.4847,-55.4984,-49.1646
 carbon_first,oracle,kg_co2_per_1k,level,0.0081,0.0075,0.0087
@@ -72,6 +84,8 @@ carbon_realistic,cheapest,quality,level,0.3196,0.2941,0.3459
 carbon_realistic,cheapest,quality,% change vs always Yi-34B,-53.4816,-57.3424,-49.4766
 carbon_realistic,greedy_tree,quality,level,0.6583,0.6325,0.6831
 carbon_realistic,greedy_tree,quality,% change vs always Yi-34B,-4.1925,-7.0172,-1.5062
+carbon_realistic,knn,quality,level,0.6653,0.6395,0.6896
+carbon_realistic,knn,quality,% change vs always Yi-34B,-3.1717,-5.8601,-0.6317
 carbon_realistic,optimal_tree,quality,level,0.6643,0.639,0.6889
 carbon_realistic,optimal_tree,quality,% change vs always Yi-34B,-3.3175,-6.0871,-0.7461
 carbon_realistic,oracle,quality,level,0.8379,0.8204,0.855
@@ -83,6 +97,8 @@ carbon_realistic,cheapest,dollars_per_1k,level,0.0463,0.0446,0.0486
 carbon_realistic,cheapest,dollars_per_1k,% change vs always Yi-34B,-75.8426,-76.7453,-74.6361
 carbon_realistic,greedy_tree,dollars_per_1k,level,0.1161,0.1134,0.1189
 carbon_realistic,greedy_tree,dollars_per_1k,% change vs always Yi-34B,-39.4441,-40.7355,-38.1848
+carbon_realistic,knn,dollars_per_1k,level,0.1186,0.1156,0.1217
+carbon_realistic,knn,dollars_per_1k,% change vs always Yi-34B,-38.1319,-39.4587,-36.7971
 carbon_realistic,optimal_tree,dollars_per_1k,level,0.1178,0.1152,0.1204
 carbon_realistic,optimal_tree,dollars_per_1k,% change vs always Yi-34B,-38.5653,-39.8594,-37.3949
 carbon_realistic,oracle,dollars_per_1k,level,0.0884,0.0846,0.0926
@@ -94,6 +110,8 @@ carbon_realistic,cheapest,kg_co2_per_1k,level,0.006,0.0052,0.007
 carbon_realistic,cheapest,kg_co2_per_1k,% change vs always Yi-34B,-66.8685,-71.2495,-60.798
 carbon_realistic,greedy_tree,kg_co2_per_1k,level,0.0095,0.0092,0.0098
 carbon_realistic,greedy_tree,kg_co2_per_1k,% change vs always Yi-34B,-47.4841,-50.7098,-44.0728
+carbon_realistic,knn,kg_co2_per_1k,level,0.0133,0.0092,0.0185
+carbon_realistic,knn,kg_co2_per_1k,% change vs always Yi-34B,-26.3131,-48.2654,1.6884
 carbon_realistic,optimal_tree,kg_co2_per_1k,level,0.0092,0.0089,0.0095
 carbon_realistic,optimal_tree,kg_co2_per_1k,% change vs always Yi-34B,-49.1596,-52.2884,-45.8158
 carbon_realistic,oracle,kg_co2_per_1k,level,0.0385,0.0284,0.0497
@@ -105,6 +123,8 @@ efficiency_first,cheapest,quality,level,0.3196,0.2941,0.3459
 efficiency_first,cheapest,quality,% change vs always Yi-34B,-53.4816,-57.3424,-49.4766
 efficiency_first,greedy_tree,quality,level,0.6002,0.5752,0.6258
 efficiency_first,greedy_tree,quality,% change vs always Yi-34B,-12.6504,-16.1755,-9.3801
+efficiency_first,knn,quality,level,0.6152,0.5902,0.639
+efficiency_first,knn,quality,% change vs always Yi-34B,-10.463,-13.6885,-7.3349
 efficiency_first,optimal_tree,quality,level,0.6032,0.5774,0.6288
 efficiency_first,optimal_tree,quality,% change vs always Yi-34B,-12.2129,-15.8122,-8.8481
 efficiency_first,oracle,quality,level,0.8171,0.7996,0.8347
@@ -116,6 +136,8 @@ efficiency_first,cheapest,dollars_per_1k,level,0.0463,0.0446,0.0486
 efficiency_first,cheapest,dollars_per_1k,% change vs always Yi-34B,-75.8426,-76.7453,-74.6361
 efficiency_first,greedy_tree,dollars_per_1k,level,0.0887,0.0859,0.0918
 efficiency_first,greedy_tree,dollars_per_1k,% change vs always Yi-34B,-53.748,-55.326,-52.0781
+efficiency_first,knn,dollars_per_1k,level,0.0949,0.092,0.0981
+efficiency_first,knn,dollars_per_1k,% change vs always Yi-34B,-50.4792,-52.0124,-48.8363
 efficiency_first,optimal_tree,dollars_per_1k,level,0.0889,0.086,0.092
 efficiency_first,optimal_tree,dollars_per_1k,% change vs always Yi-34B,-53.6434,-55.2044,-51.964
 efficiency_first,oracle,dollars_per_1k,level,0.0779,0.075,0.081
@@ -127,6 +149,8 @@ efficiency_first,cheapest,kg_co2_per_1k,level,0.006,0.0052,0.007
 efficiency_first,cheapest,kg_co2_per_1k,% change vs always Yi-34B,-66.8685,-71.2495,-60.798
 efficiency_first,greedy_tree,kg_co2_per_1k,level,0.008,0.0072,0.009
 efficiency_first,greedy_tree,kg_co2_per_1k,% change vs always Yi-34B,-56.041,-60.7433,-49.6506
+efficiency_first,knn,kg_co2_per_1k,level,0.0137,0.009,0.0195
+efficiency_first,knn,kg_co2_per_1k,% change vs always Yi-34B,-24.3833,-50.727,7.6496
 efficiency_first,optimal_tree,kg_co2_per_1k,level,0.0078,0.007,0.0088
 efficiency_first,optimal_tree,kg_co2_per_1k,% change vs always Yi-34B,-56.9357,-61.5836,-50.5563
 efficiency_first,oracle,kg_co2_per_1k,level,0.0234,0.0161,0.0311
@@ -138,6 +162,8 @@ quality_first,cheapest,quality,level,0.3196,0.2941,0.3459
 quality_first,cheapest,quality,% change vs always Yi-34B,-53.4816,-57.3424,-49.4766
 quality_first,greedy_tree,quality,level,0.6801,0.6553,0.7054
 quality_first,greedy_tree,quality,% change vs always Yi-34B,-1.0208,-3.8124,1.8046
+quality_first,knn,quality,level,0.6961,0.6713,0.7209
+quality_first,knn,quality,% change vs always Yi-34B,1.3124,-0.4249,3.0707
 quality_first,optimal_tree,quality,level,0.6831,0.6581,0.7094
 quality_first,optimal_tree,quality,% change vs always Yi-34B,-0.5833,-3.1055,2.0123
 quality_first,oracle,quality,level,0.8467,0.8302,0.864
@@ -149,6 +175,8 @@ quality_first,cheapest,dollars_per_1k,level,0.0463,0.0446,0.0486
 quality_first,cheapest,dollars_per_1k,% change vs always Yi-34B,-75.8426,-76.7453,-74.6361
 quality_first,greedy_tree,dollars_per_1k,level,0.1795,0.1753,0.1836
 quality_first,greedy_tree,dollars_per_1k,% change vs always Yi-34B,-6.3668,-7.3423,-5.503
+quality_first,knn,dollars_per_1k,level,0.1851,0.1809,0.1893
+quality_first,knn,dollars_per_1k,% change vs always Yi-34B,-3.4516,-4.281,-2.6414
 quality_first,optimal_tree,dollars_per_1k,level,0.1804,0.1762,0.1845
 quality_first,optimal_tree,dollars_per_1k,% change vs always Yi-34B,-5.8841,-6.9226,-4.944
 quality_first,oracle,dollars_per_1k,level,0.0975,0.0927,0.1025
@@ -160,6 +188,8 @@ quality_first,cheapest,kg_co2_per_1k,level,0.006,0.0052,0.007
 quality_first,cheapest,kg_co2_per_1k,% change vs always Yi-34B,-66.8685,-71.2495,-60.798
 quality_first,greedy_tree,kg_co2_per_1k,level,0.0832,0.0772,0.0894
 quality_first,greedy_tree,kg_co2_per_1k,% change vs always Yi-34B,359.8851,327.2835,396.2757
+quality_first,knn,kg_co2_per_1k,level,0.0821,0.0761,0.0883
+quality_first,knn,kg_co2_per_1k,% change vs always Yi-34B,353.8568,321.3616,390.1905
 quality_first,optimal_tree,kg_co2_per_1k,level,0.0792,0.0728,0.0858
 quality_first,optimal_tree,kg_co2_per_1k,% change vs always Yi-34B,337.9429,302.2714,377.6709
 quality_first,oracle,kg_co2_per_1k,level,0.0672,0.0525,0.0836
